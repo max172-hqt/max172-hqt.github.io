@@ -13,6 +13,10 @@
   color: var(--secondary-color);
 }
 
+.title h3 a:hover {
+  text-decoration: underline;
+}
+
 .subheading {
     font-size: 0.8em;
     font-family: var(--font-mono);

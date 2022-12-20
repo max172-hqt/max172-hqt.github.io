@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--theme-color);
+    padding: 2em 1em;
+    gap: 2em;
+    text-align: center;
+}
+
+.socialMedia ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2em;
+    text-decoration: none;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMedia a {
+    color: var(--white-color);
+    font-size: 1.5em;
+}
+
+.socialMedia a:hover {
+    color: var(--grey-color);
+}
