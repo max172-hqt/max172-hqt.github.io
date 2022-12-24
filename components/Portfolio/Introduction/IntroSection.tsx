@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./IntroSection.module.css";
-import profilePic from "public/Personal Avatar.jpeg";
+import profilePic from "../../../public/Personal Avatar.jpeg";
 
 export default function IntroSection() {
   return (
