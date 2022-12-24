@@ -24,6 +24,16 @@ export default function Navbar() {
           <li>
             <Link href="/">Home</Link>
           </li>
+          <li>
+            <a
+              href="/Huy_Tran___Resume.pdf"
+              className={styles.button}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

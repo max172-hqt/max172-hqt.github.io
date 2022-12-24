@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./IntroSection.module.css";
 import profilePic from "public/Personal Avatar.jpeg";
+import Link from "next/link";
 
 export default function IntroSection() {
   return (
@@ -39,6 +40,7 @@ export default function IntroSection() {
               <li>AWS</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
