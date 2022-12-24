@@ -1,6 +1,6 @@
-import DIVAInterface from "../../../public/Diva Interface.png";
-import MSInterface from "../../../public/MS Interface.png";
-import PIAInterface from "../../../public/PIA Interface.png";
+import DIVAInterface from "public/Diva Interface.png";
+import MSInterface from "public/MS Interface.png";
+import PIAInterface from "public/PIA Interface.png";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectSection.module.css";
 
