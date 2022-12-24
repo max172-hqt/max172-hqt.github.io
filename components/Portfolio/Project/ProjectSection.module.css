@@ -68,10 +68,10 @@
   }
 
   .cardContainer img {
-    width: 100%;
+    width: 50%;
   }
 
   .cardContainer .content {
-    width: 100%;
+    width: 50%;
   }
 }
