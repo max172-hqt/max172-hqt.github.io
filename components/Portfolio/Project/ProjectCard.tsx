@@ -1,4 +1,3 @@
-import { StaticImageData } from "next/image";
 import Image from "next/image";
 import styles from "./ProjectSection.module.css";
 
@@ -11,7 +10,7 @@ export default function ProjectCard({
   buttonText = "Visit Website",
 }: {
   title: string;
-  imageSrc: StaticImageData;
+  imageSrc: string;
   imageDescription: string;
   descriptions: string[];
   link: string,
@@ -29,7 +28,7 @@ export default function ProjectCard({
         </a>
       </h3>
       <div className={styles.cardContainer}>
-        <Image src={imageSrc} alt={imageDescription} />
+        <Image src={imageSrc} alt={imageDescription} width={500} height={500} />
         <div className={styles.content}>
           {descriptions.map((description, index) => (
             <p key={index}>{description}</p>

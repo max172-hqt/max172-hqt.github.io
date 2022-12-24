@@ -1,13 +1,10 @@
-import divaInterface from "public/Personal Avatar.jpeg";
-// import msInterface from "public/MS Interface.png";
-// import divaInterface from "public/PIA Interface.png";
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectSection.module.css";
 
 const projects = [
   {
     title: "Drug Reactions Visualization",
-    imageSrc: divaInterface,
+    imageSrc: '/DIVA Interface.png',
     imageDescription:
       "Web interface of analytics dashboard to visualize Drug adversary reactions",
     descriptions: [
@@ -19,7 +16,7 @@ const projects = [
   },
   {
     title: "Power In Aging Website",
-    imageSrc: divaInterface,
+    imageSrc: '/PIA Interface.png',
     imageDescription: "Web Interface of Power In Aging website",
     descriptions: [
       "A web-based visual analytics tool A Wordpress website for the community of support and inspiration for women in the stages of “midlife”.to analyze drug-drug interaction (DDI) signals extracted from FAERS data using association rule mining.",
@@ -29,7 +26,7 @@ const projects = [
   },
   {
     title: "MathSpring Tutoring Website",
-    imageSrc: divaInterface,
+    imageSrc: '/MS Interface.png',
     imageDescription:
       "MathSpring interface with math multiple choice question and virtual assistant",
     descriptions: [
