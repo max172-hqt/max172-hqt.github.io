@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import PageFooter from "./Footer/PageFooter";
-import Navbar from "./Navigation/Navbar";
+import PageNavbar from "./Navigation/PageNavbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <title>Max - Portfolio</title>
       </Head>
       <header>
-        <Navbar />
+        <PageNavbar />
       </header>
       <main>
         {children}
