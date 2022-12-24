@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+const isProd = process.env.NODE_ENV === 'production'
+
+const config = {
+  assetPrefix: isProd ? '/max172-hqt.github.io/' : '',
+  images: {
+    unoptimized: true,
+  },
 }
 
-module.exports = nextConfig
+module.exports = config;
