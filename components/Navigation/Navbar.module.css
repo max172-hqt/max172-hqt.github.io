@@ -31,6 +31,7 @@
   padding: 0.5rem;
   color: var(--theme-color);
   transition: scale 0.2s ease-in-out;
+  background-color: white;
 }
 
 .menu {
@@ -47,6 +48,7 @@
 
 .expanded {
   display: flex;
+  background-color: var(--theme-color);
 }
 
 .menu li {
@@ -56,12 +58,12 @@
 }
 
 .menu li:hover {
-  background-color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .menu li a {
   text-decoration: none;
-  color: var(--theme-color);
+  color: var(--white-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -84,5 +86,10 @@
 
   .menuButton {
     display: none;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: var(--theme-color);
   }
 }
