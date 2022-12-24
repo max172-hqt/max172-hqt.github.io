@@ -5,10 +5,10 @@ import profilePic from "../../public/Personal Avatar.jpeg";
 export default function IntroSection() {
   return (
     <section className={styles.introBanner}>
-      <h2 className={styles.introText}>Hello, I&apos;m Huy!</h2>
+      <h2 className={styles.introText}>Hello, I&apos;m Max!</h2>
       <div className={styles.container}>
         <div className={styles.avatar}>
-          <Image src={profilePic} alt="" />
+          <Image src={profilePic} alt="Picture of Max" />
         </div>
         <div className={styles.content}>
           <p>

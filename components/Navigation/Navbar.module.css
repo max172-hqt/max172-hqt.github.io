@@ -1,49 +1,91 @@
 /* Logo */
 .logo {
-    position: relative;
-    font-family: 'Patrick Hand', cursive;    
-    margin-top: 0.5em;
-    font-size: 2em;
-    transition: all 200ms;
-    top: 0px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 3em;
+  transition: all 200ms;
+  margin-left: 1rem;
 }
 
 .logo a {
-    text-decoration: none;
-    color: var(--dark-color);
+  text-decoration: none;
+  color: var(--white-color);
 }
 
 .logo:hover {
-    cursor: pointer;
-    transform: scale(1.2);
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
-/* Navigation styles */
 .nav {
-    display: flex;
-    flex: 0 0 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
+  background-color: var(--theme-color);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-.nav ul {
-    background-color: var(--theme-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    margin: 0;
-    gap: 0.5em;
-    align-self: stretch;
+.menuButton {
+  margin-left: auto;
+  border: 0;
+  height: 50px;
+  width: 50px;
+  padding: 0.5rem;
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  transition: scale 0.2s ease-in-out;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  flex-direction: column;
+  background-color: var(--theme-color);
+  width: 100%;
+  height: calc(100vh - 80px);
+  border-top: 1px solid var(--white-color);
+}
+
+.expanded {
+  display: flex;
 }
 
 .menu li {
-    list-style: none;
+  list-style: none;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.menu li:hover {
+  background-color: var(--secondary-color);
 }
 
 .menu li a {
-    text-decoration: none;
-    color: var(--white-color);
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+@media screen and (min-width: 768px) {
+  .nav ul {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    top: 0;
+    height: 80px;
+    flex-direction: row;
+    gap: 3em;
+    border: none;
+  }
+
+  .nav {
+    padding: 0.5em 3em;
+  }
+
+  .menuButton {
+    display: none;
+  }
 }
