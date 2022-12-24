@@ -4,7 +4,7 @@ import styles from "./ProjectSection.module.css";
 
 export default function ProjectCard({
   title,
-  // imageSrc,
+  imageSrc,
   imageDescription,
   descriptions,
   link,
