@@ -7,7 +7,7 @@
 
 .logo a {
   text-decoration: none;
-  color: var(--white-color);
+  color: var(--theme-color);
 }
 
 .logo:hover {
@@ -16,7 +16,6 @@
 }
 
 .nav {
-  background-color: var(--theme-color);
   height: 80px;
   width: 100%;
   display: flex;
@@ -30,8 +29,7 @@
   height: 50px;
   width: 50px;
   padding: 0.5rem;
-  background-color: var(--theme-color);
-  color: var(--white-color);
+  color: var(--theme-color);
   transition: scale 0.2s ease-in-out;
 }
 
@@ -41,7 +39,6 @@
   top: 80px;
   left: 0;
   flex-direction: column;
-  background-color: var(--theme-color);
   width: 100%;
   height: calc(100vh - 80px);
   border-top: 1px solid var(--white-color);
@@ -64,7 +61,7 @@
 
 .menu li a {
   text-decoration: none;
-  color: var(--white-color);
+  color: var(--theme-color);
 }
 
 @media screen and (min-width: 768px) {
