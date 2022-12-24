@@ -1,6 +1,7 @@
-import EducationSection from "../components/Education/EducationSection";
-import ExperienceSection from "../components/Experience/ExperienceSection";
-import IntroSection from "../components/Introduction/IntroSection";
+import EducationSection from "../components/Portfolio/Education/EducationSection";
+import ExperienceSection from "../components/Portfolio/Experience/ExperienceSection";
+import IntroSection from "../components/Portfolio/Introduction/IntroSection";
+import ProjectSection from "../components/Portfolio/Project/ProjectSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <IntroSection />
       <ExperienceSection />
       <EducationSection />
+      <ProjectSection />
     </>
   );
 }

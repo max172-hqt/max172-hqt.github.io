@@ -24,9 +24,6 @@ export default function Navbar() {
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li>
-            <a href="contact.html">Work</a>
-          </li>
         </ul>
       </nav>
     </header>
