@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./IntroSection.module.css";
-import profilePic from "public/Personal Avatar.jpeg";
+// import profilePic from "public/Personal Avatar.jpeg";
 
 export default function IntroSection() {
   return (
@@ -8,7 +8,7 @@ export default function IntroSection() {
       <h2 className={styles.introText}>Hello, I&apos;m Max!</h2>
       <div className={styles.container}>
         <div className={styles.avatar}>
-          <Image src={profilePic} alt="Picture of Max" />
+          {/* <Image src={profilePic} alt="Picture of Max" /> */}
         </div>
         <div className={styles.content}>
           <p>
