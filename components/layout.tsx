@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import Footer from "./Footer/Footer";
+import PageFooter from "./Footer/PageFooter";
 import Navbar from "./Navigation/Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main>
         {children}
       </main>
-      <Footer />
+      <PageFooter />
     </>
   );
 }
