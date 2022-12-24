@@ -11,7 +11,7 @@ export default function ProjectCard({
   buttonText = "Visit Website",
 }: {
   title: string;
-  // imageSrc: StaticImageData;
+  imageSrc: StaticImageData;
   imageDescription: string;
   descriptions: string[];
   link: string,
@@ -29,7 +29,7 @@ export default function ProjectCard({
         </a>
       </h3>
       <div className={styles.cardContainer}>
-        {/* <Image src={imageSrc} alt={imageDescription} /> */}
+        <Image src={imageSrc} alt={imageDescription} />
         <div className={styles.content}>
           {descriptions.map((description, index) => (
             <p key={index}>{description}</p>
