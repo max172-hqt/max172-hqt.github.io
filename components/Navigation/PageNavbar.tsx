@@ -16,7 +16,7 @@ export default function Navbar() {
     <header>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Link href="/">HT</Link>
+          <Link href="/">M</Link>
         </div>
         <button
           className={styles.menuButton}
