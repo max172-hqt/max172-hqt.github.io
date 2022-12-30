@@ -16,7 +16,7 @@ export default function Navbar() {
     <header>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Link href="/">M</Link>
+          <Link href="/">HT</Link>
         </div>
         <button
           className={styles.menuButton}
@@ -31,7 +31,7 @@ export default function Navbar() {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/blog">Blog</Link>
+            <Link href="/leetcodes">Leetcodes</Link>
           </li>
           <li>
             <a

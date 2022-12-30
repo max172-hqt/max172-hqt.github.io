@@ -1,3 +1,4 @@
+import PostLink from "../components/Leetcode/PostLink";
 import { getSortedData } from "../lib/posts";
 
 export async function getStaticProps() {
@@ -9,16 +10,16 @@ export async function getStaticProps() {
   };
 }
 
-export default function Blog({ allPostData }) {
+export default function Leetcodes({ allPostData }) {
   console.log(allPostData)
   return (
     <>
       <h2>DSA Problems</h2>
-      <ul>
+      <div>
         {allPostData.map(post => (
-          <li key={post.title}>{post.title}</li>
+          <PostLink key={post.title} post={post} />
         ))}
-      </ul>
+      </div>
     </>
   );
 }
