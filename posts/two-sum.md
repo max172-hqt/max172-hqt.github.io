@@ -3,7 +3,7 @@ title: '1. Two Sum'
 link: 'https://leetcode.com/problems/two-sum/'
 ---
 
-### Bruteforce solution: 
+### Bruteforce solution
 - Use two nested loops to loop the items in `nums`, with inner loop starting from the current outer loop index plus 1
 - Check if the sum of two numbers at these two indices is equal to the `target`
 - If yes, return the index

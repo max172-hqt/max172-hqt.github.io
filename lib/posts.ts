@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkRehype from "remark-rehype";
+import remarkStringify from "rehype-stringify";
+import rehypeHighlight from 'rehype-highlight';
 
 type PostData = {
   id: string;
@@ -14,7 +16,7 @@ const postsDir = path.join(process.cwd(), "posts");
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDir);
   return fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx$/, "");
+    const id = fileName.replace(/\.md$/, "");
     return {
       params: {
         id,
@@ -24,11 +26,13 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDir, `${id}.mdx`);
+  const fullPath = path.join(postsDir, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
   const matterResult = matter(fileContents);
   const processedContent = await remark()
-    .use(html)
+    .use(remarkRehype)
+    .use(remarkStringify)
+    .use(rehypeHighlight)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
@@ -42,7 +46,7 @@ export async function getPostData(id: string) {
 export function getSortedData() {
   const fileNames = fs.readdirSync(postsDir);
   const allPostsData: PostData[] = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx$/, "");
+    const id = fileName.replace(/\.md$/, "");
 
     // Read markdown file as string
     const fullPath = path.join(postsDir, fileName);
