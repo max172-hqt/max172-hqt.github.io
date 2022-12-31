@@ -48,7 +48,10 @@ export async function getStaticProps({ params }: { params: any }) {
   };
 }
 
-export default function Post({ postData, question }) {
+export default function Post({ postData, question }: {
+  postData: any,
+  question: any,
+}) {
   return (
     <div className={styles.container}>
       <h2>{postData.title}</h2>

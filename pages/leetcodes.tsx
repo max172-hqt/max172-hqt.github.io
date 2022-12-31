@@ -10,13 +10,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function Leetcodes({ allPostData }) {
-  console.log(allPostData)
+export default function Leetcodes({ allPostData }: { allPostData: any }) {
+  console.log(allPostData);
   return (
     <>
       <h2>Leetcode Problems</h2>
       <div>
-        {allPostData.map(post => (
+        {allPostData.map((post: any) => (
           <PostLink key={post.title} post={post} />
         ))}
       </div>
