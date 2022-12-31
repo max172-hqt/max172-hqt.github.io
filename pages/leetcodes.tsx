@@ -14,7 +14,7 @@ export default function Leetcodes({ allPostData }) {
   console.log(allPostData)
   return (
     <>
-      <h2>DSA Problems</h2>
+      <h2>Leetcode Problems</h2>
       <div>
         {allPostData.map(post => (
           <PostLink key={post.title} post={post} />
