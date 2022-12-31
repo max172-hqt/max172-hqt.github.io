@@ -8,7 +8,7 @@
     --white-color:      white;
     --grey-color:       #C3C6D1;
     --font-main:        'IBM Plex Sans', 'Roboto', sans-serif;
-    --font-big-heading: 'Bebas Neue', cursive;
+    --font-big-heading: 'Bebas Neue', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
 }
 
@@ -56,5 +56,17 @@ main {
   main {
     width: 70%;
     margin: 0 auto;
+  }
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+      padding: 15px;
   }
 }

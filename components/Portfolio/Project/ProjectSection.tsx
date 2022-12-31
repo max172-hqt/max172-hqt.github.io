@@ -19,7 +19,7 @@ const projects = [
     imageSrc: '/PIA Interface.png',
     imageDescription: "Web Interface of Power In Aging website",
     descriptions: [
-      "A web-based visual analytics tool A Wordpress website for the community of support and inspiration for women in the stages of “midlife”.to analyze drug-drug interaction (DDI) signals extracted from FAERS data using association rule mining.",
+      "A Wordpress website for the community of support and inspiration for women in the stages of “midlife”.",
       "Technology: Wordpress, Elementor",
     ],
     link: "https://www.powerinaging.com/",

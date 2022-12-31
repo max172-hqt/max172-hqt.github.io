@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    align-items: stretch;
+}
+
+.container p {
+    flex: 1;
+    font-weight: 400;
+}
+
+.container div {
+    display: flex;
+    gap: 1em;
+}

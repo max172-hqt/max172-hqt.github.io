@@ -1,10 +1,16 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import Menu from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
   const [isNavExpanded, setNavExpanded] = useState(false);
+
+  useEffect(() => {
+    setNavExpanded(false);
+  }, [router.pathname]);
 
   return (
     <header>
@@ -23,6 +29,9 @@ export default function Navbar() {
         >
           <li>
             <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/leetcodes">Leetcodes</Link>
           </li>
           <li>
             <a

@@ -40,7 +40,7 @@ export default function PageFooter() {
           </li>
         </ul>
       </div>
-      <div>Designed &amp; Developed by Huy Tran with NextJS</div>
+      <div>Developed by Max with NextJS</div>
     </footer>
   );
 }
