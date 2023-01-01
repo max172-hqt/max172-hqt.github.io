@@ -7,7 +7,7 @@ link: 'https://leetcode.com/problems/two-sum/'
 - Use two nested loops to loop the items in `nums`, with inner loop starting from the current outer loop index plus 1
 - Check if the sum of two numbers at these two indices is equal to the `target`
 - If yes, return the index
-```
+```ruby
 Two-Sum(nums, target):
     for i = 0 -> nums.length - 1:
         for j = i + 1 -> nums.length - 1:
@@ -27,7 +27,7 @@ Two-Sum(nums, target):
     - else we add the current (value, index) pair to the map
 - Time Complexity: **O(N)** with N is the length of the array `nums`
 - Space Complexity: **O(N)** because we need to store the value-index pairs in a hashmap 
-```
+```ruby
 Two-Sum(nums, target):
     map = {}
     for index, value in nums:
