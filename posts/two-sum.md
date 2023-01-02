@@ -1,6 +1,7 @@
 ---
 title: '1. Two Sum'
 link: 'https://leetcode.com/problems/two-sum/'
+topic: Arrays and Hashing
 ---
 
 ### Bruteforce solution

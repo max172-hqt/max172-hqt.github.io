@@ -1,6 +1,7 @@
 ---
 title: '217. Contains Duplicate'
 link: 'https://leetcode.com/problems/contains-duplicate/'
+topic: Arrays and Hashing
 ---
 
 ### Set solution
@@ -15,6 +16,6 @@ Contains-Duplicate(nums, target):
     for num in nums:
         if value in set:
             return True
-        set.add(value)
+    set.add(value)
     return False
 ```
