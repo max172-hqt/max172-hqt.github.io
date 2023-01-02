@@ -5,9 +5,10 @@ link: 'https://leetcode.com/problems/contains-duplicate/'
 
 ### Set solution
 - Use a set to store the unique value in the array
-- Loop through the array, if the current number is already in the set, return False. Otherwise, add number to the set
+- Loop through the array, if the current number is already in the set, return True. Otherwise, add the current number to the set
+- If the function does not return early in the loop, return False
 - Time Complexity: **O(N)** with N is the length of the array `nums`
-- Space Complexity: **O(N)** because we need to store the value-index pairs in a hashmap 
+- Space Complexity: **O(N)** because we need to store the unique values in a set
 ```ruby
 Contains-Duplicate(nums, target):
     Initialize a set
