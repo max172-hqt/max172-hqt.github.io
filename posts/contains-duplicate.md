@@ -5,7 +5,7 @@ link: 'https://leetcode.com/problems/contains-duplicate/'
 
 ### Set solution
 - Use a set to store the unique value in the array
-- If the 
+- Loop through the array, if the current number is already in the set, return False. Otherwise, add number to the set
 - Time Complexity: **O(N)** with N is the length of the array `nums`
 - Space Complexity: **O(N)** because we need to store the value-index pairs in a hashmap 
 ```ruby
