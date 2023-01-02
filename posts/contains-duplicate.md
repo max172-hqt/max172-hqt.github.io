@@ -14,5 +14,6 @@ Contains-Duplicate(nums, target):
     for num in nums:
         if value in set:
             return True
+        set.add(value)
     return False
 ```
