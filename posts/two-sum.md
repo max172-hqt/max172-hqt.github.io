@@ -1,5 +1,5 @@
 ---
-title: '1. Two Sum'
+title: '0001. Two Sum'
 link: 'https://leetcode.com/problems/two-sum/'
 topic: Arrays and Hashing
 ---

@@ -15,7 +15,7 @@
 }
 
 .title a:hover {
-  color: var(--secondary-color);
+  color: var(--theme-color);
 }
 
 .button {
@@ -41,7 +41,7 @@
 
 @media only screen and (min-width: 768px) {
   .section h2 {
-    text-align: right;
+    /* text-align: right; */
   }
 
   .title {
@@ -50,7 +50,7 @@
   }
 
   .title:hover {
-    color: var(--secondary-color);
+    color: var(--theme-color);
   }
 
   .cardContainer {

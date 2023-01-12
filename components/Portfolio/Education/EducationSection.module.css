@@ -10,13 +10,13 @@
 
 .title h3 a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--theme-color);
 }
 
 .title p {
   margin-top: 1em;
   /* font-weight: 500; */
-  color: var(--secondary-color)
+  color: var(--theme-color)
 }
 
 .subheading {
@@ -40,7 +40,7 @@
 @media only screen and (min-width: 768px) {
   /* Experience section */
   .section h2 {
-    text-align: right;
+    /* text-align: right; */
   }
 
   .details {

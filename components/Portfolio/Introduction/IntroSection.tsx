@@ -6,14 +6,14 @@ import Link from "next/link";
 export default function IntroSection() {
   return (
     <section className={styles.introBanner}>
-      <h2 className={styles.introText}>Hello, I&apos;m Max!</h2>
+      <h2 className={styles.introText}>About Me</h2>
       <div className={styles.container}>
         <div className={styles.avatar}>
           <Image src={profilePic} alt="Picture of Max" />
         </div>
         <div className={styles.content}>
           <p>
-            I&apos;m a <span>Frontend Engineer</span> with skills in{" "}
+            Hello, I&apos;m Max. I&apos;m a <span>Frontend Engineer</span> with skills in{" "}
             <span>React, NodeJS, Web Design and Software Testing</span>.
             Currently, I am a student at Fanshawe College taking the
             Post-graduate program in Mobile Application Development.{" "}

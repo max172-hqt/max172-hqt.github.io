@@ -1,5 +1,5 @@
 ---
-title: '217. Contains Duplicate'
+title: '0217. Contains Duplicate'
 link: 'https://leetcode.com/problems/contains-duplicate/'
 topic: Arrays and Hashing
 ---

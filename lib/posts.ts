@@ -65,7 +65,7 @@ export function getSortedData() {
   // const group
 
   return allPostsData.sort((a, b) => {
-    if (a.date > b.date) {
+    if (a.title > b.title) {
       return 1;
     }
     return -1;
