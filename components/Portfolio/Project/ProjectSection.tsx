@@ -24,17 +24,17 @@ const projects = [
     ],
     link: "https://www.powerinaging.com/",
   },
-  {
-    title: "MathSpring Tutoring Website",
-    imageSrc: '/MS Interface.png',
-    imageDescription:
-      "MathSpring interface with math multiple choice question and virtual assistant",
-    descriptions: [
-      "A personalized software that uses interactive multimedia to support students as they solve math problems.",
-      "Technology: Java, HTML, CSS, JavaScript",
-    ],
-    link: "https://ckc.mathspring.org/welcome.jsp?",
-  },
+  // {
+  //   title: "MathSpring Tutoring Website",
+  //   imageSrc: '/MS Interface.png',
+  //   imageDescription:
+  //     "MathSpring interface with math multiple choice question and virtual assistant",
+  //   descriptions: [
+  //     "A personalized software that uses interactive multimedia to support students as they solve math problems.",
+  //     "Technology: Java, HTML, CSS, JavaScript",
+  //   ],
+  //   link: "https://ckc.mathspring.org/welcome.jsp?",
+  // },
 ];
 
 export default function ProjectSection() {
