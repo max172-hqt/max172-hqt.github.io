@@ -66,6 +66,7 @@
 .menu li a {
   text-decoration: none;
   color: var(--white-color);
+  transition: color 200ms ease-in-out;
 }
 
 .menu li a:hover {
