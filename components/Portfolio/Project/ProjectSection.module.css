@@ -1,21 +1,23 @@
 .card {
+  margin-top: 1em;
   margin-bottom: 5em;
 }
 
 .title {
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
   font-weight: 400;
   margin-bottom: 1em;
 }
 
 .title a {
+  font-size: 1.1em;
   text-decoration: none;
-  color: var(--theme-color);
+  color: var(--text-color);
   transition: color 200ms linear;
 }
 
 .title a:hover {
-  color: var(--secondary-color);
+  color: var(--theme-color);
 }
 
 .button {
@@ -40,23 +42,28 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .section h2 {
-    text-align: right;
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card {
+    display: flex;
+    gap: 5em;
+  }
+
+  .card div {
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
   }
 
   .title {
-    font-size: 2em;
     display: inline-block;
   }
 
   .title:hover {
-    color: var(--secondary-color);
-  }
-
-  .cardContainer {
-    display: flex;
-    gap: 5em;
-    align-items: center;
+    color: var(--theme-color);
   }
 
   .project-box-container-reverse {
@@ -67,11 +74,7 @@
     text-align: right;
   }
 
-  .cardContainer img {
-    width: 50%;
-  }
-
-  .cardContainer .content {
-    width: 50%;
+  .image {
+    position: relative;
   }
 }

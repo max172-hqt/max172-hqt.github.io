@@ -27,10 +27,10 @@ export default function Navbar() {
         <ul
           className={`${styles.menu} ${isNavExpanded ? styles.expanded : ""}`}
         >
-          <li>
+          <li className={router.pathname == "/" ? styles.active : ""}>
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li className={router.pathname == "/leetcodes" ? styles.active : ""}>
             <Link href="/leetcodes">Leetcodes</Link>
           </li>
           <li>

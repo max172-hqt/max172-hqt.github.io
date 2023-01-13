@@ -1,5 +1,5 @@
 ---
-title: '242. Valid Anagram'
+title: '0242. Valid Anagram'
 link: 'https://leetcode.com/problems/valid-anagram/'
 topic: Arrays and Hashing
 ---

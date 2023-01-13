@@ -2,7 +2,7 @@
 
 :root {
     --theme-color:      #EE6352;
-    --secondary-color:  #4062BB;
+    --heading-color:    rgba(0,0,0,0.65);
     --text-color:       #222222;
     --grey-color:       #434242;
     --white-color:      white;
@@ -24,11 +24,12 @@ body {
   overflow-x: hidden;
   font-family: var(--font-main);
   color: var(--text-color);
+  /* font-size: 18px; */
 }
 
 img {
   max-width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
 }
 
@@ -37,12 +38,15 @@ a {
 }
 
 h2 {
+  /* display: inline-block;
+  width: 300px; */
   font-family: var(--font-big-heading);
   font-weight: 400;
-  color: var(--theme-color);
-  font-size: 4em;
+  color: var(--heading-color);
+  font-size: 2em;
   margin: 0.5em 0 0.25em 0;
-  border-bottom: 2px solid var(--theme-color);
+  border-bottom: 1px solid var(--theme-color);
+  padding: 0.5rem 0;
 }
 
 p {
@@ -53,19 +57,13 @@ main {
   margin: 1em;
 }
 
-@media only screen and (min-width: 768px) {
-  main {
-    width: 70%;
-    margin: 0 auto;
-  }
-}
-
 .markdown-body {
   box-sizing: border-box;
   min-width: 200px;
-  max-width: 980px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 45px;
+  padding: 1em 0;
+  font-family: var(--font-main);
 }
 
 @media (max-width: 767px) {

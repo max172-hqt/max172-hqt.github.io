@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkRehype from "remark-rehype";
 import remarkStringify from "rehype-stringify";
-import rehypeHighlight from 'rehype-highlight';
+import rehypeHighlight from "rehype-highlight";
 
 type PostData = {
   id: string;
@@ -64,10 +64,12 @@ export function getSortedData() {
 
   // const group
 
-  return allPostsData.sort((a, b) => {
-    if (a.date > b.date) {
-      return 1;
-    }
-    return -1;
-  });
+  return allPostsData
+    .sort((a, b) => (a.title > b.title ? 1 : -1))
+    .map((post) => ({
+      ...post,
+      problemId: post.title.substr(0, 4).replace(/^0+/, ""),
+      title: post.title.substr(5),
+      solution: `/leetcodes/${post.id}`
+    }));
 }

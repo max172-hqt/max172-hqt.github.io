@@ -13,22 +13,17 @@ export default function ProjectCard({
   imageSrc: string;
   imageDescription: string;
   descriptions: string[];
-  link: string,
+  link: string;
   buttonText?: string;
 }) {
   return (
     <div className={styles.card}>
-      <h3 className={styles.title}>
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {title}
-        </a>
-      </h3>
-      <div className={styles.cardContainer}>
-        <Image src={imageSrc} alt={imageDescription} width={500} height={500} />
+      <div className={styles.content}>
+        <h3 className={styles.title}>
+          <a href={link} target="_blank" rel="noreferrer">
+            {title}
+          </a>
+        </h3>
         <div className={styles.content}>
           {descriptions.map((description, index) => (
             <p key={index}>{description}</p>
@@ -44,6 +39,9 @@ export default function ProjectCard({
             </a>
           </p>
         </div>
+      </div>
+      <div className={styles.image}>
+        <Image src={imageSrc} alt={imageDescription} width={500} height={500} />
       </div>
     </div>
   );

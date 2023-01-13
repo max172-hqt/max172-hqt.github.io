@@ -5,7 +5,7 @@
 
 .introBanner p span {
   font-weight: 500;
-  color: var(--secondary-color);
+  color: var(--theme-color);
 }
 
 .avatar {
@@ -37,6 +37,12 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .introBanner {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 5em;
+    margin-bottom: 10em;
+  }
   /* Intro banner design */
   .container {
     display: flex;

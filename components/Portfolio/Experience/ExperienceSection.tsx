@@ -42,7 +42,7 @@ const experience = [
 export default function ExperienceSection() {
   return (
     <section className={styles.section}>
-      <h2>My Experience</h2>
+      <h2>Experience</h2>
       {experience.map(job => (
         <ExperienceCard key={job.time} {...job} />
       ))}
