@@ -25,7 +25,7 @@ export async function getStaticProps() {
 
 function ProblemTable({ posts }: { posts: any }) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
