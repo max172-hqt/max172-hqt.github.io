@@ -54,8 +54,8 @@ export default function Post({ postData, question }: {
 }) {
   return (
     <div className={styles.container}>
-      <h2>{postData.title}</h2>
-      {/* <p>Difficulty: {question.difficulty}</p> */}
+      <h2>{postData.title.replace(/^0+/, "")}</h2>
+      <p>Difficulty: {question.difficulty}</p>
       <article
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
