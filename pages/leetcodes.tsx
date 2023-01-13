@@ -6,13 +6,9 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import Link from "next/link";
-import { dividerClasses, IconButton } from "@mui/material";
-import {
-  Launch,
-  LightbulbOutlined,
-} from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+import { Launch, LightbulbOutlined } from "@mui/icons-material";
 
 export async function getStaticProps() {
   const allPostData = getSortedData();
@@ -73,6 +69,19 @@ export default function Leetcodes({ allPostData }: { allPostData: any }) {
   return (
     <div className={styles.container}>
       <h2>Leetcode Problems</h2>
+      <p>
+        Besides web development, I also love to study and solve Data Structure
+        and Algorithms problems to be better at problem solving, communication skills,
+        and to be a better software engineer. Here is a selected list of problems that I have solved, along with my
+        thought process and solutions. The list of problems I posted here is 
+        heavily influenced by <a href="https://neetcode.io/practice">neetcode.com</a>.
+        Check him out!
+      </p>
+      <p>
+        The articles are mainly for me to reference to later, so they are far from being
+        as comprehensive as the official solutions on Leetcode. However, I will try my best
+        to be as clear as possible!
+      </p>
       <ProblemTable posts={allPostData} />
     </div>
   );

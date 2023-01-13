@@ -15,14 +15,14 @@ export default function IntroSection() {
           <p>
             Hello, I&apos;m Max. I&apos;m a <span>Frontend Engineer</span> with skills in{" "}
             <span>React, NodeJS, Web Design and Software Testing</span>.
-            Currently, I am a student at Fanshawe College taking the
+            Currently, I am a student at Fanshawe College in Ontario, Canada taking the
             Post-graduate program in Mobile Application Development.{" "}
           </p>
           <p>
-            With a strong foundation in Computer Science and a few years of work
-            experience in Software Engineering, my goal is to build highly
-            performant web and mobile applications while being user friendly and
-            having a beautiful interface.
+            In my previous work, I mainly worked with Frontend technologies to
+            build interactive dashboards and visualizations. 
+            Now I&apos;m studying to develop <span>mobile applications in iOS and Android</span>, with various technologies. 
+            I love studying, building side projects, problem solving and taking on freelancing web projects.
           </p>
           <div className={styles.technologies}>
             <p>

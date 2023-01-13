@@ -63,6 +63,7 @@ main {
   max-width: 100%;
   margin: 0 auto;
   padding: 1em 0;
+  font-family: var(--font-main);
 }
 
 @media (max-width: 767px) {
