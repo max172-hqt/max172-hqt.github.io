@@ -12,20 +12,15 @@ export default function App({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-CRQQ6MWGP0"
       />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-CRQQ6MWGP0', {
-              page_path: window.location.pathname,
-              });
-            `,
-        }}
-      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CRQQ6MWGP0');
+        `}
+      </Script>
       <Layout>
         <Component {...pageProps} />
       </Layout>
