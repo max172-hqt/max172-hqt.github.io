@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Max - Portfolio</title>
+        <title>Max Tran</title>
         <meta
           name="description"
           content="Max is a Frontend Engineer with skills in React, NodeJS, Web Design and Software Testing. Currently, Max a student at Fanshawe College taking the Post-graduate program in Mobile Application Development."

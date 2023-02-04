@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import styles from "./post.module.css";
 
@@ -52,9 +53,14 @@ export default function Post({ postData, question }: {
   postData: any,
   question: any,
 }) {
+  const title = postData.title.replace(/^0+/, "")
+
   return (
     <div className={styles.container}>
-      <h2>{postData.title.replace(/^0+/, "")}</h2>
+      <Head>
+        <title>{`${title}`}</title>
+      </Head>
+      <h2>{title}</h2>
       <p>Difficulty: {question.difficulty}</p>
       <article
         className="markdown-body"
