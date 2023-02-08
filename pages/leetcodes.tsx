@@ -24,7 +24,7 @@ function ProblemTable({ posts }: { posts: any }) {
   return (
     <>
       <Head>
-        <title>Max Tran - Leetcodes</title>
+        <title>Max Tran - LeetCode</title>
       </Head>
       <TableContainer>
         <Table aria-label="simple table">
@@ -74,7 +74,7 @@ function ProblemTable({ posts }: { posts: any }) {
 export default function Leetcodes({ allPostData }: { allPostData: any }) {
   return (
     <div className={styles.container}>
-      <h2>Leetcode Problems</h2>
+      <h2>LeetCode Problems</h2>
       <p>
         Besides web development, I also love to study and solve Data Structure
         and Algorithms problems to be better at problem solving, communication

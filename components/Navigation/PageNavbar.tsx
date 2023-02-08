@@ -31,7 +31,7 @@ export default function Navbar() {
             <Link href="/">Home</Link>
           </li>
           <li className={router.pathname == "/leetcodes" ? styles.active : ""}>
-            <Link href="/leetcodes">Leetcodes</Link>
+            <Link href="/leetcodes">LeetCode</Link>
           </li>
           <li>
             <a

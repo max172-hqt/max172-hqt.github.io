@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./IntroSection.module.css";
 import profilePic from "public/Personal Avatar.jpeg";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function IntroSection() {
   return (
