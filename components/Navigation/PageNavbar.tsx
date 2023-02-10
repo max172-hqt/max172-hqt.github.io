@@ -15,16 +15,20 @@ interface Props {
   scrolledToTop: boolean
 }
 
+const activeStyle = (active: boolean) => ({
+  color: active ? '#005BA4' : '#222222',
+})
+
 function HideOnScroll(props: Props) {
   const { children, window, scrolledToTop } = props;
 
   const trigger = useScrollTrigger({
-    disableHysteresis: false,
+    disableHysteresis: true,
     threshold: 100,
     target: window ? window() : undefined,
   });
 
-  const childrenClone = React.cloneElement(children, {
+  return React.cloneElement(children, {
     style: {
       backgroundColor: 'rgba(255, 255, 255, 0.9)',
       backdropFilter: 'blur(6px)',
@@ -32,11 +36,11 @@ function HideOnScroll(props: Props) {
     }
   })
 
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {childrenClone}
-    </Slide>
-  );
+  // return (
+  //   <Slide appear={false} direction="down" in={!trigger}>
+  //     {childrenClone}
+  //   </Slide>
+  // );
 }
 
 export default function Navbar() {
@@ -65,7 +69,7 @@ export default function Navbar() {
         <HideOnScroll scrolledToTop={scrolledToTop}>
           <nav className={styles.nav}>
             <div className={styles.logo}>
-              <Link href="/">HT</Link>
+              <Link href="/">Max Tran</Link>
             </div>
             <button
               className={styles.menuButton}
@@ -78,20 +82,18 @@ export default function Navbar() {
                 isNavExpanded ? styles.expanded : ""
               }`}
             >
-              <li className={router.pathname == "/" ? styles.active : ""}>
-                <Link href="/">Home</Link>
+              <li>
+                <Link href="/" style={activeStyle(router.pathname === '/')}>Home</Link>
               </li>
-              <li
-                className={router.pathname == "/leetcodes" ? styles.active : ""}
-              >
-                <Link href="/leetcodes">LeetCode</Link>
+              <li>
+                <Link href="/leetcodes" style={activeStyle(router.pathname === '/leetcodes')}>LeetCode</Link>
               </li>
               <li>
                 <a
                   href="/Huy_Tran___Resume.pdf"
-                  className={styles.button}
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={activeStyle(router.pathname === '/resume')}
                 >
                   Resume
                 </a>

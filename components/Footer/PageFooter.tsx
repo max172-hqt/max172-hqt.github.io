@@ -40,7 +40,7 @@ export default function PageFooter() {
           </li>
         </ul>
       </div>
-      <div>Developed by Max with NextJS</div>
+      <div>Designed & Developed by Max</div>
     </footer>
   );
 }
