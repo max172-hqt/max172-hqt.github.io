@@ -2,6 +2,9 @@
 .main {
   padding: 1em;
 }
+.introBanner {
+  margin-top: 5em;
+}
 
 .introBanner p span {
   font-weight: 500;
@@ -40,7 +43,7 @@
   .introBanner {
     max-width: 900px;
     margin: 0 auto;
-    margin-top: 5em;
+    margin-top: 10em;
     margin-bottom: 10em;
   }
   /* Intro banner design */

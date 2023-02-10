@@ -1,3 +1,4 @@
+import { CSSProperties } from "@emotion/serialize";
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import styles from "./post.module.css";
@@ -49,11 +50,18 @@ export async function getStaticProps({ params }: { params: any }) {
   };
 }
 
+const mapColorDifficulty = {
+  'Easy': '#43A047',
+  'Medium': '#EF6C00',
+  'Hard': '#E91E62',
+}
+
 export default function Post({ postData, question }: {
   postData: any,
   question: any,
 }) {
   const title = postData.title.replace(/^0+/, "")
+  const difficulty: keyof typeof mapColorDifficulty = question.difficulty;
 
   return (
     <div className={styles.container}>
@@ -61,7 +69,7 @@ export default function Post({ postData, question }: {
         <title>{`${title}`}</title>
       </Head>
       <h2>{title}</h2>
-      <p>Difficulty: {question.difficulty}</p>
+      <p><span style={{ color: mapColorDifficulty[difficulty] }}>{difficulty}</span></p>
       <article
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
