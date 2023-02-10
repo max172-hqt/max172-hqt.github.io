@@ -12,37 +12,57 @@ interface Props {
    */
   window?: () => Window;
   children: React.ReactElement;
+  scrolledToTop: boolean
 }
 
 function HideOnScroll(props: Props) {
-  const { children, window } = props;
+  const { children, window, scrolledToTop } = props;
 
   const trigger = useScrollTrigger({
-    disableHysteresis: true,
+    disableHysteresis: false,
     threshold: 100,
     target: window ? window() : undefined,
   });
 
-  return React.cloneElement(children, {
+  const childrenClone = React.cloneElement(children, {
     style: {
       backgroundColor: 'rgba(255, 255, 255, 0.9)',
       backdropFilter: 'blur(6px)',
-      boxShadow: trigger ? '0 2px 4px 0 rgba(0,0,0,.2)' : 'none'
+      boxShadow: !scrolledToTop ? '0 2px 4px 0 rgba(0,0,0,.2)' : 'none'
     }
   })
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {childrenClone}
+    </Slide>
+  );
 }
 
 export default function Navbar(props: Props) {
   const router = useRouter();
   const [isNavExpanded, setNavExpanded] = useState(false);
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
+  };
 
   useEffect(() => {
     setNavExpanded(false);
   }, [router.pathname]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <header>
-        <HideOnScroll {...props}>
+        <HideOnScroll {...props} scrolledToTop={scrolledToTop}>
           <nav className={styles.nav}>
             <div className={styles.logo}>
               <Link href="/">HT</Link>
