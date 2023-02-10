@@ -18,6 +18,11 @@ export default function Document() {
             gtag('config', 'G-CRQQ6MWGP0');
             `}
         </Script>
+        <meta name="google-site-verification" content="Cljgks3kulDu4N80zwh-6lySysH5La-V7FmGXPnYRiI" />
+        <meta
+          name="description"
+          content="Max is a Frontend Engineer with skills in React, NodeJS, Web Design and Software Testing. Currently, Max a student at Fanshawe College taking the Post-graduate program in Mobile Application Development."
+        />
       </Head>
       <body>
         <Main />
