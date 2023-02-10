@@ -15,9 +15,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         />
       </Head>
       <header>
-        <PageNavbar>
-          {children}
-        </PageNavbar>
+        <PageNavbar />
       </header>
       <main>
         {children}

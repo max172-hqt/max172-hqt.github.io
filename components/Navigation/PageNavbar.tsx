@@ -39,7 +39,7 @@ function HideOnScroll(props: Props) {
   );
 }
 
-export default function Navbar(props: Props) {
+export default function Navbar() {
   const router = useRouter();
   const [isNavExpanded, setNavExpanded] = useState(false);
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -62,7 +62,7 @@ export default function Navbar(props: Props) {
 
   return (
     <header>
-        <HideOnScroll {...props} scrolledToTop={scrolledToTop}>
+        <HideOnScroll scrolledToTop={scrolledToTop}>
           <nav className={styles.nav}>
             <div className={styles.logo}>
               <Link href="/">HT</Link>
