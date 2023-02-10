@@ -23,12 +23,12 @@ function HideOnScroll(props: Props) {
   const { children, window, scrolledToTop } = props;
 
   const trigger = useScrollTrigger({
-    disableHysteresis: true,
+    disableHysteresis: false,
     threshold: 100,
     target: window ? window() : undefined,
   });
 
-  return React.cloneElement(children, {
+  const childrenClone = React.cloneElement(children, {
     style: {
       backgroundColor: 'rgba(255, 255, 255, 0.9)',
       backdropFilter: 'blur(6px)',
@@ -36,11 +36,11 @@ function HideOnScroll(props: Props) {
     }
   })
 
-  // return (
-  //   <Slide appear={false} direction="down" in={!trigger}>
-  //     {childrenClone}
-  //   </Slide>
-  // );
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {childrenClone}
+    </Slide>
+  );
 }
 
 export default function Navbar() {

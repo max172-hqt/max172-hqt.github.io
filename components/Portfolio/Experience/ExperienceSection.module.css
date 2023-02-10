@@ -37,9 +37,14 @@
 
 @media only screen and (min-width: 768px) {
     /* Experience section */
+    .container {
+      background-color: #F5F5F5;
+      padding: 1em;
+    }
     .section {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 1em 0;
     }
 
     .details {
@@ -58,5 +63,9 @@
 
     .details ul {
         width: 60%;
+    }
+
+    .header {
+      margin-bottom: 1em;
     }
 }

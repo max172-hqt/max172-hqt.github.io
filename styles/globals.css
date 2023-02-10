@@ -31,6 +31,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  border: 1px solid var(--grey-color);
 }
 
 a {
@@ -41,20 +42,16 @@ h2 {
   /* display: inline-block;
   width: 300px; */
   font-family: var(--font-big-heading);
-  font-weight: 300;
-  color: var(--heading-color);
+  font-weight: 400;
+  color: var(--text-color);
   font-size: 2em;
   margin: 0.5em 0 0.25em 0;
-  border-bottom: 1px solid var(--text-color);
+  /* border-bottom: 1px solid var(--text-color); */
   padding: 0.5rem 0;
 }
 
 p {
   line-height: 1.5;
-}
-
-main {
-  margin: 1em;
 }
 
 .markdown-body {
@@ -70,4 +67,9 @@ main {
   .markdown-body {
       padding: 15px;
   }
+
+  main {
+    margin: 1em;
+  }
+
 }

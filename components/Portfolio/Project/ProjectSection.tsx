@@ -39,11 +39,13 @@ const projects = [
 
 export default function ProjectSection() {
   return (
-    <section className={styles.section}>
-      <h2>Projects</h2>
-      {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
-      ))}
-    </section>
+    <div className={styles.container}>
+      <section className={styles.section}>
+        <h2 className={styles.header}>Projects</h2>
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </section>
+    </div>
   );
 }

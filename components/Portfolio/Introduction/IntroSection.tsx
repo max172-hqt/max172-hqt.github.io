@@ -6,14 +6,14 @@ import { useEffect, useState } from "react";
 export default function IntroSection() {
   return (
     <section className={styles.introBanner}>
-      <h2 className={styles.introText}>About Me</h2>
+      <h1 className={styles.introText}>Hello, I&apos;m Max</h1>
       <div className={styles.container}>
         <div className={styles.avatar}>
           <Image src={profilePic} alt="Picture of Max" />
         </div>
         <div className={styles.content}>
           <p>
-            Hello, I&apos;m Max. I&apos;m a Frontend Engineer with skills in{" "}
+            I&apos;m a Frontend Engineer with skills in{" "}
             <span>React, NodeJS, Web Design and Software Testing</span>.
             Currently, I am a student at Fanshawe College in Ontario, Canada; taking the
             Post-graduate program in Mobile Application Development.{" "}

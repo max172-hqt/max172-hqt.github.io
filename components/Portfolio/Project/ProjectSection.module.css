@@ -77,4 +77,13 @@
   .image {
     position: relative;
   }
+
+  .container {
+    background-color: #F5F5F5;
+    padding: 2em;
+  }
+
+  .header {
+    margin-bottom: 2em;
+  }
 }
