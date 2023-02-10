@@ -1,10 +1,10 @@
 import Head from "next/head";
-import React from "react";
+import React, { useRef } from "react";
 import PageFooter from "../Footer/PageFooter";
 import PageNavbar from "../Navigation/PageNavbar";
 import styles from './layout.module.css';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactElement }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +15,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </Head>
       <header>
-        <PageNavbar />
+        <PageNavbar>
+          {children}
+        </PageNavbar>
       </header>
       <main>
         {children}
