@@ -20,7 +20,7 @@ export default function IntroSection() {
           <p>
             In my previous work, I mainly worked with Frontend technologies to
             build interactive dashboards and visualizations. 
-            Now I&apos;m studying to develop mobile applications in iOS and Android, with various technologies. 
+            Now I&apos;m studying to develo mobile applications in iOS and Android, with various technologies. 
             I love studying, building side projects, problem solving and taking on freelancing web projects.
           </p>
           <div className={styles.technologies}>
