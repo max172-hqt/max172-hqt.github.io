@@ -1,4 +1,3 @@
-import { CSSProperties } from "@emotion/serialize";
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import styles from "./post.module.css";
