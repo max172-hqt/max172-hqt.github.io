@@ -24,11 +24,13 @@ const education = [
 
 export default function EducationSection() {
   return (
-    <section className={styles.education}>
-      <h2 className={styles.header}>Education</h2>
-      {education.map((data, index) => (
-        <EducationCard key={index} {...data} />
-      ))} 
-    </section>
+    <div className={styles.container}>
+      <section className={styles.education}>
+        <h2 className={styles.header}>Education</h2>
+        {education.map((data, index) => (
+          <EducationCard key={index} {...data} />
+        ))}
+      </section>
+    </div>
   );
 }

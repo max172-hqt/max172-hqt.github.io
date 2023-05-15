@@ -16,7 +16,7 @@
 .title p {
   margin-top: 1em;
   /* font-weight: 500; */
-  color: var(--theme-color)
+  color: var(--theme-color);
 }
 
 .subheading {
@@ -39,10 +39,14 @@
 
 @media only screen and (min-width: 768px) {
   /* Experience section */
+  .container {
+    background-color: #f8f9fc;
+  }
+  
   .education {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 2em 0; 
+    padding: 2em 0;
   }
 
   .header {

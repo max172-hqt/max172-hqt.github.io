@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <IntroSection />
       <ExperienceSection />
-      <EducationSection />
       <ProjectSection />
+      <EducationSection />
     </>
   );
 }
