@@ -4,7 +4,7 @@ import styles from "./ProjectSection.module.css";
 const projects = [
   {
     title: "Drug Reactions Visualization",
-    imageSrc: '/DIVA Interface.png',
+    imageSrc: '/DIVA Interface.svg',
     imageDescription:
       "Web interface of analytics dashboard to visualize Drug adversary reactions",
     descriptions: [
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     title: "Power In Aging Website",
-    imageSrc: '/PIA Interface.png',
+    imageSrc: '/PIA Interface.svg',
     imageDescription: "Web Interface of Power In Aging website",
     descriptions: [
       "A Wordpress website for the community of support and inspiration for women in the stages of “midlife”.",
@@ -24,17 +24,18 @@ const projects = [
     ],
     link: "https://www.powerinaging.com/",
   },
-  // {
-  //   title: "MathSpring Tutoring Website",
-  //   imageSrc: '/MS Interface.png',
-  //   imageDescription:
-  //     "MathSpring interface with math multiple choice question and virtual assistant",
-  //   descriptions: [
-  //     "A personalized software that uses interactive multimedia to support students as they solve math problems.",
-  //     "Technology: Java, HTML, CSS, JavaScript",
-  //   ],
-  //   link: "https://ckc.mathspring.org/welcome.jsp?",
-  // },
+  {
+    title: "Weather App",
+    imageSrc: '/Weather App.svg',
+    imageDescription:
+      "Weather App interface",
+    descriptions: [
+      "An iOS application to show current temperature and weather forecast information through a Map View by adding different location pins on the map. ",
+      "Technology: iOS, Swift, StoryBoard, Weather API",
+    ],
+    link: null,
+    imageVertical: true,
+  },
 ];
 
 export default function ProjectSection() {
