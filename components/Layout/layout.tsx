@@ -1,12 +1,11 @@
 import Head from "next/head";
-import React, { useRef } from "react";
+import React from "react";
 import PageFooter from "../Footer/PageFooter";
 import PageNavbar from "../Navigation/PageNavbar";
-import styles from './layout.module.css';
 
 export default function Layout({ children }: { children: React.ReactElement }) {
   return (
-    <div>
+    <div className="container mx-auto">
       <Head>
         <title>Max Tran</title>
         <meta
@@ -18,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
       <main>
         {children}
       </main>
-      <PageFooter />
+      {/* <PageFooter /> */}
     </div>
   );
 }

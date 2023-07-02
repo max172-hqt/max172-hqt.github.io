@@ -1,30 +1,60 @@
 import classNames from "classnames";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import Link from "next/link";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function NavBar() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
+  const Icon = ({ name }: { name: string }) => {
+    if (name === "github") {
+      return <GitHubIcon fontSize="inherit" />;
+    }
+    if (name === "linkedin") {
+      return <LinkedInIcon fontSize="inherit" />;
+    }
+    return <EmailIcon fontSize="inherit" />;
+  };
+
   return (
-    <header className="bg-gray-900 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
-      <div className="flex items-center justify-between px-4 py-3 sm:p-0 text-white text-xl font-medium">
-        <div>Max Tran</div>
+    <header className="sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
+      <div className="flex items-center justify-between px-4 py-3 sm:p-0 font-medium">
+        <div className="flex space-x-4 items-center justify-center">
+          {[
+            ["github", "https://github.com/max172-hqt"],
+            ["linkedin", "https://www.linkedin.com/in/huytran172/"],
+            ["mailto", "mailto:huytran172@gmail.com"],
+          ].map(([title, url]) => (
+            <a
+              key="title"
+              href={url}
+              target="_blank"
+              className="hover:text-teal-600 transition ease-in-out duration-300 text-2xl"
+              rel="noreferrer"
+            >
+              <Icon name={title} />
+            </a>
+          ))}
+        </div>
         <div className="sm:hidden">
           <button
             type="button"
-            className="block text-gray-500 hover:text-white focus:text-white focus:outline-none"
+            className="block text-gray-500 hover:text-teal-400 focus:text-teal-400 focus:outline-none"
             onClick={() => setOpen(!open)}
           >
             <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
               {open ? (
                 <path
-                  v-if="isOpen"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                 />
               ) : (
                 <path
-                  v-if="!isOpen"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
                 />
               )}
@@ -33,16 +63,24 @@ export default function NavBar() {
         </div>
       </div>
       <nav
-        className={classNames("items-center", "justify-between", "sm:flex", "sm:p-0", {
-          block: open,
-          hidden: !open,
-        })}
+        className={classNames(
+          "text-lg",
+          "items-center",
+          "justify-between",
+          "sm:flex",
+          "sm:p-0",
+          "sm:text-md",
+          {
+            block: open,
+            hidden: !open,
+          }
+        )}
       >
         {[
-          ["Home", "/"],
-          ["LeetCode", "/leetcodes"],
+          ["about", "/"],
+          ["leetcode", "/leetcodes"],
           [
-            "My Resume",
+            "resume",
             "/Huy_Tran___Resume.pdf",
             "_blank",
             "noopenner noreferrer",
@@ -51,7 +89,12 @@ export default function NavBar() {
           <a
             key={title}
             href={url}
-            className="block px-2 py-1 mx-2 text-white font-semibold rounded hover:bg-gray-800"
+            className={classNames(
+              "block px-2 py-1 mx-2 text-slate-700 rounded hover:text-teal-600 transition ease-in-out duration-300",
+              {
+                "text-teal-500": router.pathname === url,
+              }
+            )}
             target={target != null ? target : undefined}
             rel={rel != null ? rel : undefined}
           >
