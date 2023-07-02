@@ -6,7 +6,7 @@ import styles from './layout.module.css';
 
 export default function Layout({ children }: { children: React.ReactElement }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Max Tran</title>
         <meta
@@ -14,9 +14,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
           content="Max is a Frontend Engineer with skills in React, NodeJS, Web Design and Software Testing. Currently, Max a student at Fanshawe College taking the Post-graduate program in Mobile Application Development."
         />
       </Head>
-      <header>
-        <PageNavbar />
-      </header>
+      <PageNavbar />
       <main>
         {children}
       </main>

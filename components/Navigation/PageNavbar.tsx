@@ -1,106 +1,64 @@
-import Link from "next/link";
-import styles from "./Navbar.module.css";
-import Menu from "@mui/icons-material/Menu";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { Slide, useScrollTrigger } from "@mui/material";
+import classNames from "classnames";
+import React, { useState } from "react";
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-  children: React.ReactElement;
-  scrolledToTop: boolean
-}
-
-const activeStyle = (active: boolean) => ({
-  color: active ? '#005BA4' : '#222222',
-})
-
-function HideOnScroll(props: Props) {
-  const { children, window, scrolledToTop } = props;
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: false,
-    threshold: 100,
-    target: window ? window() : undefined,
-  });
-
-  const childrenClone = React.cloneElement(children, {
-    style: {
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      backdropFilter: 'blur(6px)',
-      boxShadow: !scrolledToTop ? '0 2px 4px 0 rgba(0,0,0,.2)' : 'none'
-    }
-  })
+export default function NavBar() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {childrenClone}
-    </Slide>
-  );
-}
-
-export default function Navbar() {
-  const router = useRouter();
-  const [isNavExpanded, setNavExpanded] = useState(false);
-  const [scrolledToTop, setScrolledToTop] = useState(true);
-
-  const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 50);
-  };
-
-  useEffect(() => {
-    setNavExpanded(false);
-  }, [router.pathname]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <header>
-        <HideOnScroll scrolledToTop={scrolledToTop}>
-          <nav className={styles.nav}>
-            <div className={styles.logo}>
-              <Link href="/">Max Tran</Link>
-            </div>
-            <button
-              className={styles.menuButton}
-              onClick={() => setNavExpanded(!isNavExpanded)}
-            >
-              <Menu />
-            </button>
-            <ul
-              className={`${styles.menu} ${
-                isNavExpanded ? styles.expanded : ""
-              }`}
-            >
-              <li>
-                <Link href="/" style={activeStyle(router.pathname === '/')}>Home</Link>
-              </li>
-              <li>
-                <Link href="/leetcodes" style={activeStyle(router.pathname === '/leetcodes')}>LeetCode</Link>
-              </li>
-              <li>
-                <a
-                  href="/Huy_Tran___Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={activeStyle(router.pathname === '/resume')}
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </HideOnScroll>
+    <header className="bg-gray-900 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
+      <div className="flex items-center justify-between px-4 py-3 sm:p-0 text-white text-xl font-medium">
+        <div>Max Tran</div>
+        <div className="sm:hidden">
+          <button
+            type="button"
+            className="block text-gray-500 hover:text-white focus:text-white focus:outline-none"
+            onClick={() => setOpen(!open)}
+          >
+            <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+              {open ? (
+                <path
+                  v-if="isOpen"
+                  fill-rule="evenodd"
+                  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+                />
+              ) : (
+                <path
+                  v-if="!isOpen"
+                  fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        className={classNames("items-center", "justify-between", "sm:flex", "sm:p-0", {
+          block: open,
+          hidden: !open,
+        })}
+      >
+        {[
+          ["Home", "/"],
+          ["LeetCode", "/leetcodes"],
+          [
+            "My Resume",
+            "/Huy_Tran___Resume.pdf",
+            "_blank",
+            "noopenner noreferrer",
+          ],
+        ].map(([title, url, target, rel]) => (
+          <a
+            key={title}
+            href={url}
+            className="block px-2 py-1 mx-2 text-white font-semibold rounded hover:bg-gray-800"
+            target={target != null ? target : undefined}
+            rel={rel != null ? rel : undefined}
+          >
+            {title}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }

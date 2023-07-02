@@ -6,10 +6,10 @@ import ProjectSection from "../components/Portfolio/Project/ProjectSection";
 export default function Home() {
   return (
     <>
-      <IntroSection />
+      {/* <IntroSection />
       <ExperienceSection />
       <ProjectSection />
-      <EducationSection />
+      <EducationSection /> */}
     </>
   );
 }
