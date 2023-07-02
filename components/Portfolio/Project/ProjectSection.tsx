@@ -10,10 +10,17 @@ const projects = [
     github: "https://github.com/max172-hqt/grade-tracker",
   },
   {
+    title: "Personal Website",
+    descriptions:
+      "Personal portfolio website. Also served as a small space to write articles and thought process on solving Leetcode problems.",
+    technologies: ["NextJS", "Typescript", "TailwindCSS", "Remark"],
+    github: "https://github.com/max172-hqt/max172-hqt.github.io",
+  },
+  {
     title: "Weather App",
     descriptions:
       "An iOS application to show current temperature and weather forecast information through a Map View by adding different location pins on the map. ",
-    technologies: ["UI Kit", "Swift", "Weather API"],
+    technologies: ["UIKit", "Swift", "WeatherAPI", "MapKit"],
     external: "TODO",
     imageVertical: true,
   },
@@ -35,10 +42,10 @@ const projects = [
 
 export default function ProjectSection() {
   return (
-    <section className="container max-w-5xl flex flex-col justify-center mx-auto my-20 space-y-4">
+    <section className="container max-w-5xl flex flex-col justify-center my-20 space-y-4 px-4 mx-auto">
       <h1 className="text-3xl">Projects</h1>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 gap-4">
         {projects.map((project) => (
           <div
             className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border divide-y"
@@ -77,7 +84,7 @@ export default function ProjectSection() {
               <div className="text-gray-700">{project.descriptions}</div>
             </div>
             <div className="my-4 pt-4">
-              <ul className="list-inside flex space-x-4 text-xs font-mono">
+              <ul className="list-inside flex text-xs font-mono flex-wrap gap-3">
                 {project.technologies.map((tech, index) => (
                   <li key={index}>{tech}</li>
                 ))}

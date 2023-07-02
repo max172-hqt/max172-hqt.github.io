@@ -15,9 +15,9 @@ const technologies = [
 
 export default function IntroSection() {
   return (
-    <section className="container max-w-3xl flex flex-col justify-center mx-auto my-20 space-y-4">
+    <section className="container lg:max-w-3xl flex flex-col justify-center mx-auto lg:my-20 space-y-4 p-4">
       <h1 className="text-5xl">Huy Tran</h1>
-      <div className="flex space-x-10">
+      <div className="flex md:space-x-10 md:flex-row flex-col">
         <div className={classNames("flex-1 flex flex-col space-y-4")}>
           <div>
             I am a student at Fanshawe College in London, ON; pursuing the
@@ -52,7 +52,7 @@ export default function IntroSection() {
             ))}
           </ul>
         </div>
-        <div className="w-60">
+        <div className="md:w-60 mt-4">
           <Image src={profilePic} alt="Picture of Huy" />
         </div>
       </div>

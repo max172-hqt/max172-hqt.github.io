@@ -30,7 +30,7 @@ export default function NavBar() {
             ["mailto", "mailto:huytran172@gmail.com"],
           ].map(([title, url]) => (
             <a
-              key="title"
+              key={title}
               href={url}
               target="_blank"
               className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
