@@ -1,57 +1,61 @@
 import Image from "next/image";
-import styles from "./IntroSection.module.css";
 import profilePic from "public/Personal Avatar.jpeg";
+import classNames from "classnames";
+
+const technologies = [
+  "React",
+  "React Native",
+  "iOS Development",
+  "Android Development",
+  "React Testing Library",
+  "NextJS",
+  "Selenium",
+  "Wordpress",
+];
 
 export default function IntroSection() {
   return (
-    <section>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <section className="container max-w-3xl flex flex-col justify-center mx-auto my-20 space-y-4">
+      <h1 className="text-5xl">Huy Tran</h1>
+      <div className="flex space-x-10">
+        <div className={classNames("flex-1 flex flex-col space-y-4")}>
+          <div>
+            I am a student at Fanshawe College in London, ON; pursuing the
+            post-graduate program in Mobile Application Development. I have 4
+            years of work experience in Frontend and Web Automation and been
+            expanding my knowledge in iOS, Android and Cross-platform mobile
+            development.
+          </div>
+          <div>
+            I completed my Bachelor’s degree in Computer Science at Worcester
+            Polytechnic Institute (Worcester, MA), where I worked on a{" "}
+            <a
+              href="https://www.wpi.edu/news/using-data-science-help-predict-adverse-drug-reactions"
+              target="_blank"
+              rel="noreferrer"
+              className={classNames(
+                "text-sky-500 rounded hover:text-sky-600 transition ease-in-out duration-300"
+              )}
+            >
+              Visual Analytics System
+            </a>{" "}
+            to visualize adversary interactions of two or more drugs among 200+
+            drugs with Prof. Rundensteiner.
+          </div>
+          <div>
+            Here are a few technologies that I&apos;ve been working with
+            recently:
+          </div>
+          <ul className="list-inside list-disc columns-2 font-mono text-gray-500 text-sm">
+            {technologies.map((text, index) => (
+              <li key={index}>{text}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="w-60">
+          <Image src={profilePic} alt="Picture of Huy" />
+        </div>
+      </div>
     </section>
   );
 }
-
-// export default function IntroSection() {
-//   return (
-//     <section className={styles.introBanner}>
-//       <h1 className={styles.introText}>Hello, I&apos;m Max</h1>
-//       <div className={styles.container}>
-//         <div className={styles.avatar}>
-//           <Image src={profilePic} alt="Picture of Max" />
-//         </div>
-//         <div className={styles.content}>
-//           <p>
-//             I&apos;m a Frontend Engineer with skills in{" "}
-//             <span>React, NodeJS, Web Design and Software Testing</span>.
-//             Currently, I am a student at Fanshawe College in Ontario, Canada; taking the
-//             Post-graduate program in Mobile Application Development.{" "}
-//           </p>
-//           <p>
-//             In my previous work, I mainly worked with Frontend technologies to
-//             build interactive dashboards and visualizations.
-//             Now I&apos;m studying to develo mobile applications in iOS and Android, with various technologies.
-//             I love studying, building side projects, problem solving and taking on freelancing web projects.
-//           </p>
-//           <div className={styles.technologies}>
-//             <p>
-//               Here are a few technologies that I&apos;ve been working with
-//               recently:
-//             </p>
-//             <ul>
-//               <li>React</li>
-//               <li>Typescript</li>
-//               <li>Cypress</li>
-//               <li>Testing Library</li>
-//               <li>NodeJS</li>
-//               <li>Selenium</li>
-//               <li>Wordpress</li>
-//               <li>AWS</li>
-//             </ul>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }

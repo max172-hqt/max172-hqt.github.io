@@ -1,51 +1,91 @@
-import ProjectCard from "./ProjectCard";
-import styles from "./ProjectSection.module.css";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const projects = [
   {
+    title: "Grade Tracker",
+    descriptions:
+      "A mobile application to track the student current progress and estimate the average grades to achieve a certain letter grade.",
+    technologies: ["React Native", "Typescript", "Native Base"],
+    github: "https://github.com/max172-hqt/grade-tracker",
+  },
+  {
     title: "Weather App",
-    imageSrc: "/Weather App.svg",
-    imageDescription: "Weather App interface",
-    descriptions: [
+    descriptions:
       "An iOS application to show current temperature and weather forecast information through a Map View by adding different location pins on the map. ",
-      "Technology: iOS, Swift, StoryBoard, Weather API",
-    ],
-    link: null,
+    technologies: ["UI Kit", "Swift", "Weather API"],
+    external: "TODO",
     imageVertical: true,
   },
   {
     title: "Power In Aging Website",
-    imageSrc: "/PIA Interface.svg",
-    imageDescription: "Web Interface of Power In Aging website",
-    descriptions: [
+    descriptions:
       "A Wordpress website for the community of support and inspiration for women in the stages of “midlife”.",
-      "Technology: Wordpress, Elementor",
-    ],
-    link: "https://www.powerinaging.com/",
+    technologies: ["Wordpress", "Elementor", "Memberpress"],
+    external: "https://www.powerinaging.com/",
   },
   {
     title: "Drug Reactions Visualization",
-    imageSrc: "/DIVA Interface.svg",
-    imageDescription:
-      "Web interface of analytics dashboard to visualize Drug adversary reactions",
-    descriptions: [
+    descriptions:
       "A web-based visual analytics tool to analyze drug-drug interaction (DDI) signals extracted from FAERS data using association rule mining.",
-      "Technology: React, D3, Express, Typescript",
-    ],
-    link: "https://github.com/WPI-MIAP/MIAP-Frontend",
-    buttonText: "View Source Code",
+    technologies: ["React", "D3", "Expres", "Typescript"],
+    github: "https://github.com/WPI-MIAP/MIAP-Frontend",
   },
 ];
 
 export default function ProjectSection() {
   return (
-    <div className={styles.container}>
-      <section className={styles.section}>
-        <h2 className={styles.header}>Projects</h2>
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+    <section className="container max-w-5xl flex flex-col justify-center mx-auto my-20 space-y-4">
+      <h1 className="text-3xl">Projects</h1>
+
+      <div className="grid grid-cols-3 gap-4">
+        {projects.map((project) => (
+          <div
+            className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border divide-y"
+            key={project.title}
+          >
+            <div className="flex-grow">
+              <div className="pb-4">
+                <h5 className="text-gray-900 font-bold text-xl">
+                  {project.title}
+                </h5>
+                <div>
+                  {project.github && (
+                    <a
+                      key="title"
+                      href={project.github}
+                      target="_blank"
+                      className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
+                      rel="noreferrer"
+                    >
+                      <GitHubIcon fontSize="inherit" />
+                    </a>
+                  )}
+                  {project.external && (
+                    <a
+                      key="title"
+                      href={project.external}
+                      target="_blank"
+                      className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
+                      rel="noreferrer"
+                    >
+                      <OpenInNewIcon fontSize="inherit" />
+                    </a>
+                  )}
+                </div>
+              </div>
+              <div className="text-gray-700">{project.descriptions}</div>
+            </div>
+            <div className="my-4 pt-4">
+              <ul className="list-inside flex space-x-4 text-xs font-mono">
+                {project.technologies.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         ))}
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

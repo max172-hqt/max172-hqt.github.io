@@ -33,7 +33,7 @@ export default function NavBar() {
               key="title"
               href={url}
               target="_blank"
-              className="hover:text-teal-600 transition ease-in-out duration-300 text-2xl"
+              className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
               rel="noreferrer"
             >
               <Icon name={title} />
@@ -43,7 +43,7 @@ export default function NavBar() {
         <div className="sm:hidden">
           <button
             type="button"
-            className="block text-gray-500 hover:text-teal-400 focus:text-teal-400 focus:outline-none"
+            className="block text-gray-500 hover:text-sky-400 focus:text-sky-400 focus:outline-none"
             onClick={() => setOpen(!open)}
           >
             <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -90,9 +90,9 @@ export default function NavBar() {
             key={title}
             href={url}
             className={classNames(
-              "block px-2 py-1 mx-2 text-slate-700 rounded hover:text-teal-600 transition ease-in-out duration-300",
+              "block px-2 py-1 mx-2 text-slate-700 rounded hover:text-sky-600 transition ease-in-out duration-300",
               {
-                "text-teal-500": router.pathname === url,
+                "text-sky-500": router.pathname === url,
               }
             )}
             target={target != null ? target : undefined}

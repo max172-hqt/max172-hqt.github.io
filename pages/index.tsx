@@ -6,6 +6,8 @@ import ProjectSection from "../components/Portfolio/Project/ProjectSection";
 export default function Home() {
   return (
     <>
+      <IntroSection />
+      <ProjectSection />
       {/* <IntroSection />
       <ExperienceSection />
       <ProjectSection />
