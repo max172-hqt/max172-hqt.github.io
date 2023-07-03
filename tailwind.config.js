@@ -6,7 +6,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        sidebar: "360px auto"
+      },
+      gridTemplateRows: {
+        header: "64px auto",
+      },
+    },
   },
   plugins: [],
 }

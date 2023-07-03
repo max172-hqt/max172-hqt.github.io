@@ -97,11 +97,10 @@ export default function NavBar() {
             href={url}
             className={classNames(
               "block px-2 py-1 mx-2 rounded hover:text-amber-600 transition ease-in-out duration-300",
-              {
-                "font-semibold": router.pathname === url,
-                "text-amber-600": router.pathname === url,
-                "text-slate-700": router.pathname !== url,
-              }
+              router.pathname === url ||
+                (url === "/leetcodes" && router.pathname === "/leetcodes/[id]")
+                ? "font-semibold text-amber-600"
+                : "text-slate-700"
             )}
             target={external ? "_blank" : undefined}
             rel={external ? "noopenner noreferrer" : undefined}
