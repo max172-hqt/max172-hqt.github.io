@@ -1,17 +1,11 @@
-import EducationSection from "../components/Portfolio/Education/EducationSection";
-import ExperienceSection from "../components/Portfolio/Experience/ExperienceSection";
-import IntroSection from "../components/Portfolio/Introduction/IntroSection";
-import ProjectSection from "../components/Portfolio/Project/ProjectSection";
+import IntroSection from "../components/IntroSection";
+import ProjectSection from "../components/ProjectSection";
 
 export default function Home() {
   return (
     <>
       <IntroSection />
       <ProjectSection />
-      {/* <IntroSection />
-      <ExperienceSection />
-      <ProjectSection />
-      <EducationSection /> */}
     </>
   );
 }

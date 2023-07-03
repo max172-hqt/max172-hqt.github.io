@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
-import PageFooter from "../Footer/PageFooter";
-import PageNavbar from "../Navigation/PageNavbar";
+import PageFooter from "./PageFooter";
+import PageNavbar from "./PageNavbar";
 
 export default function Layout({ children }: { children: React.ReactElement }) {
   return (

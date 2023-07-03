@@ -16,7 +16,7 @@ const technologies = [
 export default function IntroSection() {
   return (
     <section className="container lg:max-w-3xl flex flex-col justify-center mx-auto lg:my-20 space-y-4 p-4">
-      <h1 className="font-semibold text-5xl">Huy Tran</h1>
+      <h1 className="font-medium text-5xl">Huy Tran</h1>
       <div className="flex md:space-x-10 md:flex-row flex-col">
         <div className={classNames("flex-1 flex flex-col space-y-4")}>
           <div>
@@ -34,7 +34,7 @@ export default function IntroSection() {
               target="_blank"
               rel="noreferrer"
               className={classNames(
-                "text-sky-500 rounded hover:text-sky-600 transition ease-in-out duration-300"
+                "text-amber-600 rounded hover:text-amber-700 transition ease-in-out duration-300"
               )}
             >
               Visual Analytics System

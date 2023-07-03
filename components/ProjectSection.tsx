@@ -62,10 +62,10 @@ export default function ProjectSection() {
                 <div className="flex gap-2">
                   {project.github && (
                     <a
-                      key="title"
+                      key={project.github}
                       href={project.github}
                       target="_blank"
-                      className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
+                      className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
                       rel="noreferrer"
                     >
                       <GitHubIcon fontSize="inherit" />
@@ -73,10 +73,10 @@ export default function ProjectSection() {
                   )}
                   {project.external && (
                     <a
-                      key="title"
+                      key={project.external}
                       href={project.external}
                       target="_blank"
-                      className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
+                      className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
                       rel="noreferrer"
                     >
                       <OpenInNewIcon fontSize="inherit" />
