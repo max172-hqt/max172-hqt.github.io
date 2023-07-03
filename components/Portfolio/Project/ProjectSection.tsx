@@ -5,16 +5,17 @@ const projects = [
   {
     title: "Grade Tracker",
     descriptions:
-      "A mobile application to track the student current progress and estimate the average grades to achieve a certain letter grade.",
-    technologies: ["React Native", "Typescript", "Native Base"],
+      "A React Native application to track the student current progress and estimate the average grades to achieve a certain letter grade.",
+    technologies: ["React Native", "TypeScript", "Native Base"],
     github: "https://github.com/max172-hqt/grade-tracker",
   },
   {
     title: "Personal Website",
     descriptions:
       "Personal portfolio website. Also served as a small space to write articles and thought process on solving Leetcode problems.",
-    technologies: ["NextJS", "Typescript", "TailwindCSS", "Remark"],
+    technologies: ["NextJS", "TypeScript", "TailwindCSS", "Remark"],
     github: "https://github.com/max172-hqt/max172-hqt.github.io",
+    external: "/leetcodes",
   },
   {
     title: "Weather App",
@@ -29,21 +30,23 @@ const projects = [
     descriptions:
       "A Wordpress website for the community of support and inspiration for women in the stages of “midlife”.",
     technologies: ["Wordpress", "Elementor", "Memberpress"],
-    external: "https://www.powerinaging.com/",
+    external: "https://www.powerinaging.com/membership",
   },
   {
     title: "Drug Reactions Visualization",
     descriptions:
       "A web-based visual analytics tool to analyze drug-drug interaction (DDI) signals extracted from FAERS data using association rule mining.",
-    technologies: ["React", "D3", "Expres", "Typescript"],
+    technologies: ["React", "D3", "Express", "TypeScript"],
     github: "https://github.com/WPI-MIAP/MIAP-Frontend",
+    external:
+      "https://www.wpi.edu/news/using-data-science-help-predict-adverse-drug-reactions",
   },
 ];
 
 export default function ProjectSection() {
   return (
     <section className="container max-w-5xl flex flex-col justify-center my-20 space-y-4 px-4 mx-auto">
-      <h1 className="text-3xl">Projects</h1>
+      <h1 className="text-3xl font-semibold">What I've built</h1>
 
       <div className="grid lg:grid-cols-3 gap-4">
         {projects.map((project) => (
@@ -53,10 +56,10 @@ export default function ProjectSection() {
           >
             <div className="flex-grow">
               <div className="pb-4">
-                <h5 className="text-gray-900 font-bold text-xl">
+                <h5 className="text-gray-900 font-semibold text-xl">
                   {project.title}
                 </h5>
-                <div>
+                <div className="flex gap-2">
                   {project.github && (
                     <a
                       key="title"

@@ -1,10 +1,16 @@
 import classNames from "classnames";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import Link from "next/link";
+
+const navItems: Array<[string, string, boolean]> = [
+  ["about", "/", false],
+  ["resume", "/resume", false],
+  ["leetcode", "/leetcodes", false],
+];
 
 export default function NavBar() {
   const router = useRouter();
@@ -23,23 +29,32 @@ export default function NavBar() {
   return (
     <header className="sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
       <div className="flex items-center justify-between px-4 py-3 sm:p-0 font-medium">
-        <div className="flex space-x-4 items-center justify-center">
-          {[
-            ["github", "https://github.com/max172-hqt"],
-            ["linkedin", "https://www.linkedin.com/in/huytran172/"],
-            ["mailto", "mailto:huytran172@gmail.com"],
-          ].map(([title, url]) => (
-            <a
-              key={title}
-              href={url}
-              target="_blank"
-              className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
-              rel="noreferrer"
-            >
-              <Icon name={title} />
-            </a>
-          ))}
-        </div>
+        {router.pathname === "/" ? (
+          <div className="flex space-x-4 items-center justify-center">
+            {[
+              ["github", "https://github.com/max172-hqt"],
+              ["linkedin", "https://www.linkedin.com/in/huytran172/"],
+              ["mailto", "mailto:huytran172@gmail.com"],
+            ].map(([title, url]) => (
+              <a
+                key={title}
+                href={url}
+                target="_blank"
+                className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
+                rel="noreferrer"
+              >
+                <Icon name={title} />
+              </a>
+            ))}
+          </div>
+        ) : (
+          <Link
+            href="/"
+            className="hover:text-sky-600 transition ease-in-out duration-300 text-2xl"
+          >
+            Huy Tran
+          </Link>
+        )}
         <div className="sm:hidden">
           <button
             type="button"
@@ -76,27 +91,19 @@ export default function NavBar() {
           }
         )}
       >
-        {[
-          ["about", "/"],
-          ["leetcode", "/leetcodes"],
-          [
-            "resume",
-            "/Huy_Tran___Resume.pdf",
-            "_blank",
-            "noopenner noreferrer",
-          ],
-        ].map(([title, url, target, rel]) => (
+        {navItems.map(([title, url, external]) => (
           <a
             key={title}
             href={url}
             className={classNames(
               "block px-2 py-1 mx-2 text-slate-700 rounded hover:text-sky-600 transition ease-in-out duration-300",
               {
-                "text-sky-500": router.pathname === url,
+                "font-semibold": router.pathname === url,
+                "text-sky-400": router.pathname === url,
               }
             )}
-            target={target != null ? target : undefined}
-            rel={rel != null ? rel : undefined}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopenner noreferrer" : undefined}
           >
             {title}
           </a>

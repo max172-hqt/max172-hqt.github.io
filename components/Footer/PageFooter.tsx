@@ -1,7 +1,7 @@
 export default function PageFooter() {
   return (
-    <footer className="bg-sky-300 text-center weight-medium text-sm py-2">
-      <div>© Copyright 2023 Huy Tran. Developed using NextJS, Typescript and TailwindCSS. Hosted with Github page.</div>
+    <footer className="bg-sky-50 text-center weight-medium text-sm py-1 fixed bottom-0 left-0 right-0">
+      <div>© Copyright 2023 Huy Tran. Developed with NextJS, TypeScript and TailwindCSS. Hosted by Github Pages.</div>
     </footer>
   );
 }
