@@ -23,7 +23,7 @@ topic: Arrays and Hashing
 - For example, for character 'a', we will store the count in the index `'a' - 'a' = 0`
   of the array - Similarly for 'd', it will be `'d' - 'a' = 100 - 97 = 3` - 'z': `'z'- 'a' = 122 - 97 = 25`
 
-```ruby
+```python
 Valid-Anagram(s: String, t: String): Boolean
     if s.length != t.length:
         return False

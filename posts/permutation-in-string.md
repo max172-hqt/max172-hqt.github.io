@@ -14,7 +14,7 @@ topic: Sliding Windows
   has the same character frequency as s1, return `true`, `false` otherwise
 - Time complexity: `O(26 * (|s2| - |s1|))`
 
-```ruby
+```python
 Permutation-In-String(s1: String, s2: String) -> Boolean:
     if s1.size > s2.size:
         return false

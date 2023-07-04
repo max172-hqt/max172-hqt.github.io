@@ -10,7 +10,7 @@ topic: Arrays and Hashing
 - Check if the sum of two numbers at these two indices is equal to the `target`
 - If yes, return the index
 
-```ruby
+```python
 Two-Sum(nums, target):
     for i = 0 -> nums.length - 1:
         for j = i + 1 -> nums.length - 1:
@@ -33,7 +33,7 @@ Two-Sum(nums, target):
 - Time Complexity: **O(N)** with N is the length of the array `nums`
 - Space Complexity: **O(N)** because we need to store the value-index pairs in a hashmap
 
-```ruby
+```python
 Two-Sum(nums, target):
     map = {}
     for index, value in nums:

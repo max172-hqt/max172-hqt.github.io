@@ -11,7 +11,7 @@ module.exports = {
         sidebar: "360px auto",
       },
       gridTemplateRows: {
-        header: "64px auto",
+        header: "auto 1fr",
       },
     },
   },

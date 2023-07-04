@@ -7,36 +7,35 @@ import LeetcodeSidebar from "./LeetcodeSidebar";
 
 export default function Layout({ children }: { children: React.ReactElement }) {
   const router = useRouter();
-  const [theme, setTheme] = useState("okaidia");
-
-  if (router.pathname.startsWith("/leetcodes")) {
-    return (
-      <div className="grid min-h-screen grid-rows-header">
-        <div className="sticky top-0 bg-white border-b border-gray-200">
-          <PageNavbar />
-        </div>
-        <div className="grid lg:grid-cols-sidebar xl:container xl:mx-auto">
-          <LeetcodeSidebar />
-          {children}
-        </div>
-      </div>
-    );
-  }
+  const [sidenavOpen, setSidenavOpen] = useState(false);
 
   return (
     <>
-      <div className="container mx-auto">
-        <Head>
-          <title>Max Tran</title>
-          <meta
-            name="description"
-            content="Max is a Frontend Engineer with skills in React, NodeJS, Web Design and Software Testing. Currently, Max a student at Fanshawe College taking the Post-graduate program in Mobile Application Development."
-          />
-        </Head>
-        <PageNavbar />
-        <main>{children}</main>
+      <Head>
+        <title>Max Tran</title>
+        <meta
+          name="description"
+          content="Max is a Frontend Engineer with skills in React, NodeJS, Web Design and Software Testing. Currently, Max a student at Fanshawe College taking the Post-graduate program in Mobile Application Development."
+        />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+      </Head>
+      <PageNavbar setSidenavOpen={setSidenavOpen} />
+      <div className="xl:container xl:mx-auto">
+        {router.pathname.startsWith("/leetcodes") ? (
+          <div className="flex md:flex-row flex-col gap-10">
+            <LeetcodeSidebar
+              sidenavOpen={sidenavOpen}
+              setSidenavOpen={setSidenavOpen}
+            />
+            <main>{children}</main>
+          </div>
+        ) : (
+          <>
+            <main>{children}</main>
+            <PageFooter />
+          </>
+        )}
       </div>
-      <PageFooter />
     </>
   );
 }

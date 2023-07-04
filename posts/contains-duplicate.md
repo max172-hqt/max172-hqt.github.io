@@ -12,7 +12,7 @@ topic: Arrays and Hashing
 - Time Complexity: **O(N)** with N is the length of the array `nums`
 - Space Complexity: **O(N)** because we need to store the unique values in a set
 
-```ruby
+```python
 Contains-Duplicate(nums, target):
     Initialize a set
     for num in nums:

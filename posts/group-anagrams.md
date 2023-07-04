@@ -16,7 +16,7 @@ topic: Arrays and Hashing
   - If `sortedString` is a key in the map, push the original `str` ot the list of anagrams of that key
 - Use the map to return the appropriate result of the function (2d array)
 
-```ruby
+```python
 Group-Anagrams(strs): Array<Array<String>>
     map = {}
     ans = Array<Array<String>>
