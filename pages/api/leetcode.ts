@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { getSortedData } from '../../lib/posts';
 
 type Data = {
-  name: string
+  data: Post[]
 }
 
 export default async function handler(

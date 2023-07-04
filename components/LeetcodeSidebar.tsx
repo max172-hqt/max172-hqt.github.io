@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function LeetcodeSidebar() {
   const router = useRouter();
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     (async () => {
