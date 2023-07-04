@@ -1,16 +1,18 @@
 ---
-title: '0045. Jump Game II'
-link: 'https://leetcode.com/problems/jump-game-ii/'
+title: "0045. Jump Game II"
+link: "https://leetcode.com/problems/jump-game-ii/"
 topic: Sliding Windows, Dynamic Programming, Greedy
 ---
 
-### My thought process
+## My thought process
+
 - At position `i` (`start`), we can calculate the furthest reachable position by doing `i + nums[i]`(`end`)
 - Then from the list of all position from `start + 1` to `end`, we choose the position `best` that would
-help us jump the farthest into the array
+  help us jump the farthest into the array
 - In the process of doing this, update the number of steps and check if we jump to index `n - 1`, and return the answer
 
-### C++ Solution
+## C++ Solution
+
 ```cpp
 class Solution {
 public:

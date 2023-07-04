@@ -2,9 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import remarkRehype from "remark-rehype";
-import remarkStringify from "rehype-stringify";
-import rehypeHighlight from "rehype-highlight";
+import html from "remark-html";
+import prism from "remark-prism";
 
 type PostData = {
   id: string;
@@ -30,9 +29,8 @@ export async function getPostData(id: string) {
   const fileContents = fs.readFileSync(fullPath, "utf-8");
   const matterResult = matter(fileContents);
   const processedContent = await remark()
-    .use(remarkRehype)
-    .use(remarkStringify)
-    .use(rehypeHighlight)
+    .use(html, { sanitize: false })
+    .use(prism, { plugins: ["line-numbers"] })
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
@@ -70,6 +68,6 @@ export function getSortedData(): Post[] {
       ...post,
       problemId: post.title.substr(0, 4).replace(/^0+/, ""),
       title: post.title.substr(5),
-      solution: `/leetcodes/${post.id}`
+      solution: `/leetcodes/${post.id}`,
     }));
 }

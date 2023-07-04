@@ -1,26 +1,29 @@
 ---
-title: '0042. Trapping Rain Water'
-link: 'https://leetcode.com/problems/trapping-rain-water/'
+title: "0042. Trapping Rain Water"
+link: "https://leetcode.com/problems/trapping-rain-water/"
 topic: Dynamic Programming, Two Pointers
 ---
 
-### Dynamic Programming
+## Dynamic Programming
+
 The trapped rain at one position will be calculated by getting the min height
 between the highest bar on the left and on the right. In other word, at position
 i we have:
+
 - `trapped_rain[i] = min_height(max_height_left, max_height_right) - height[i]`
 
-In order to get the max height of the bars before and after `i` index, we first 
-calculate `prefix` and `suffix` array: `left_max` and `right_max`. Then for 
-each index i, we calculate the trapped rain water at i and add it to the 
+In order to get the max height of the bars before and after `i` index, we first
+calculate `prefix` and `suffix` array: `left_max` and `right_max`. Then for
+each index i, we calculate the trapped rain water at i and add it to the
 final answer, using the formula above.
 
 Hint: This problem can also be done using two pointers by switching back and
-forth between left and right. If `max_left` < `max_right`, we consider the 
-next bar from the left (increment the left pointer) and calculate trapped 
+forth between left and right. If `max_left` < `max_right`, we consider the
+next bar from the left (increment the left pointer) and calculate trapped
 water, and vice versa. At the same time, update `max_left` and `max_right`.
 
-### C++ Solution
+## C++ Solution
+
 ```cpp
 #include <iostream>
 #include <vector>

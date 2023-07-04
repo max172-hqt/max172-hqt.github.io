@@ -8,13 +8,12 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        sidebar: "360px auto"
+        sidebar: "360px auto",
       },
       gridTemplateRows: {
         header: "64px auto",
       },
     },
   },
-  plugins: [],
-}
-
+  plugins: [require("@tailwindcss/typography")],
+};

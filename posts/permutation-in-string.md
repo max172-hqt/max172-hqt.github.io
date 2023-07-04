@@ -1,16 +1,17 @@
 ---
-title: '0567. Permutation in String'
-link: 'https://leetcode.com/problems/permutation-in-string/'
+title: "0567. Permutation in String"
+link: "https://leetcode.com/problems/permutation-in-string/"
 topic: Sliding Windows
 ---
 
-### Sliding window solution
+## Sliding window solution
+
 - Use two frequency arrays to store the counts of characters of s1 and substrings of s2 with length `|s1|`
 - For each step `i`
-    - Remove the count of character at index `i`
-    - Add the count of character at index `i` + `|s1|`
-- If one of the substrings of s2 with length `|s1|` 
-has the same character frequency as s1, return `true`, `false` otherwise
+  - Remove the count of character at index `i`
+  - Add the count of character at index `i` + `|s1|`
+- If one of the substrings of s2 with length `|s1|`
+  has the same character frequency as s1, return `true`, `false` otherwise
 - Time complexity: `O(26 * (|s2| - |s1|))`
 
 ```ruby

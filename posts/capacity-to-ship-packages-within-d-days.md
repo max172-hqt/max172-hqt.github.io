@@ -1,23 +1,26 @@
 ---
-title: '1056. Capacity To Ship Packages Within D Days'
-link: 'https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/'
+title: "1056. Capacity To Ship Packages Within D Days"
+link: "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/"
 topic: Binary search
 ---
 
 ### Thought process
+
 We can do binary search to search for the minimum capacity. For a particular
 capacity, we need to check how many days the ship can ship all the packages.
-- If the number of days required is more than `days`, we set the capacity too
-low.
-- If the number of days required is less than or equal to `days`, we either
-find an answer or set the capacity too high.
 
-We can safely set the upperbound to the total number of weights, and it 
+- If the number of days required is more than `days`, we set the capacity too
+  low.
+- If the number of days required is less than or equal to `days`, we either
+  find an answer or set the capacity too high.
+
+We can safely set the upperbound to the total number of weights, and it
 would take a day to ship all the package. Similarly, the lowerbound should
-be the max weights of all packages, because if it's smaller than a single 
+be the max weights of all packages, because if it's smaller than a single
 package's weight, there's no way to ship that package.
 
-### C++ Solution
+## C++ Solution
+
 ```cpp
 class Solution {
 public:
@@ -31,7 +34,7 @@ public:
             hi += weights[i];
             lo = max(lo, weights[i]);
         }
-        
+
         while (lo < hi) {
             int capacity = lo + (hi - lo) / 2;
             int days_required = 1;
@@ -46,7 +49,7 @@ public:
                     day_capacity += weights[i];
                 }
             }
-            
+
             if (days_required <= days) {
                 // We either find an answer, or can still minimize
                 hi = capacity;
@@ -59,9 +62,11 @@ public:
     }
 };
 ```
-### Complexity
+
+## Complexity
+
 - Time complexity will be `O(n log(totalWeight))`, since we perform binary
-search with the upper limit of total weight of all packages, and reduce the
-search space by half. The nested for loop takes O(n) time to calculate the
-number of day required to ship all packages.
+  search with the upper limit of total weight of all packages, and reduce the
+  search space by half. The nested for loop takes O(n) time to calculate the
+  number of day required to ship all packages.
 - Space complexity: `O(1)`
