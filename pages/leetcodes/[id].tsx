@@ -114,13 +114,14 @@ export default function Post({
           square
           expanded={problemExpanded}
           onClick={() => setProblemExpanded(!problemExpanded)}
+          className="dark:bg-slate-900"
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon className="dark:text-white"/>}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <div className="text-xl font-bold">Problem Statement</div>
+            <div className="text-xl font-bold dark:text-white">Problem Statement</div>
           </AccordionSummary>
           <AccordionDetails>
             <article
@@ -135,17 +136,18 @@ export default function Post({
           square
           expanded={solutionExpanded}
           onClick={() => setSolutionExpanded(!solutionExpanded)}
+          className="dark:bg-slate-900"
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon className="dark:text-white"/>}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <div className="text-xl font-bold">Show Solution</div>
+            <div className="text-xl font-bold dark:text-white">Show Solution</div>
           </AccordionSummary>
           <AccordionDetails>
             <article
-              className="prose prose-zinc text-black"
+              className="prose dark:prose-invert prose-slate text-black dark:text-slate-400"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
             ></article>
           </AccordionDetails>

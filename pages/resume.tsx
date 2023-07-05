@@ -73,7 +73,9 @@ export default function Resume() {
   return (
     <section className="container max-w-3xl flex flex-col justify-center my-5 sm:my-10 px-4 mx-auto gap-8">
       <div className="flex items-center">
-        <h1 className="text-3xl sm:text-5xl font-medium flex-grow">Resume</h1>
+        <h1 className="text-3xl sm:text-5xl font-medium flex-grow dark:text-slate-200">
+          Resume
+        </h1>
         <div>
           <a
             href="/Huy_Tran___Resume.pdf"
@@ -86,9 +88,9 @@ export default function Resume() {
         </div>
       </div>
 
-      <div className="p-4 flex flex-col gap-4 rounded overflow-hidden border">
-        <h2 className="font-bold text-2xl">Education</h2>
-        <div className="divide-y">
+      <div className="p-4 flex flex-col gap-4 rounded overflow-hidden border dark:border-slate-600">
+        <h2 className="font-bold text-2xl dark:text-slate-200">Education</h2>
+        <div className="divide-y dark:divide-slate-600">
           {education.map((school) => (
             <div className="grid grid-cols-3 py-4" key={school.time}>
               <div className="col-span-3 sm:col-span-1 justify-self-start">
@@ -97,16 +99,23 @@ export default function Resume() {
                 </span>
               </div>
               <div className="col-span-3 sm:col-span-2 flex flex-col">
-                <div className="font-bold">{school.major}</div>
-                <div className="mb-2">{school.schoolName}</div>
-                <ul className="list-inside list-disc mb-4">
+                <div className="font-bold dark:text-slate-200">
+                  {school.major}
+                </div>
+                <div className="mb-2 dark:text-slate-400">
+                  {school.schoolName}
+                </div>
+                <ul className="list-inside list-disc mb-4 dark:text-slate-400">
                   {school.extras.map((text, index) => (
                     <li key={index}>{text}</li>
                   ))}
                 </ul>
                 <ul className="list-inside flex text-xs font-mono flex-wrap gap-3">
                   {school.courseWork.map((course, index) => (
-                    <li key={index} className="bg-gray-200 px-2 rounded">
+                    <li
+                      key={index}
+                      className="bg-slate-200 dark:bg-slate-500 px-2 rounded"
+                    >
                       {course}
                     </li>
                   ))}
@@ -118,9 +127,9 @@ export default function Resume() {
       </div>
       {/* End Education */}
 
-      <div className="p-4 flex flex-col gap-4 rounded overflow-hidden border mb-16">
+      <div className="p-4 flex flex-col gap-4 rounded overflow-hidden border dark:border-slate-600 mb-16">
         <h2 className="font-bold text-2xl">Experience</h2>
-        <div className="divide-y">
+        <div className="divide-y dark:divide-slate-600">
           {experience.map((job) => (
             <div className="grid grid-cols-3 py-4" key={job.time}>
               <div className="col-span-3 sm:col-span-1 justify-self-start">
@@ -129,9 +138,9 @@ export default function Resume() {
                 </span>
               </div>
               <div className="col-span-3 sm:col-span-2 flex flex-col">
-                <div className="font-bold">{job.title}</div>
-                <div className="mb-2">{job.employer}</div>
-                <ul className="list-inside list-disc">
+                <div className="font-bold dark:text-slate-200">{job.title}</div>
+                <div className="mb-2 dark:text-slate-400">{job.employer}</div>
+                <ul className="list-inside list-disc dark:text-slate-400">
                   {job.duties.map((text, index) => (
                     <li key={index}>{text}</li>
                   ))}

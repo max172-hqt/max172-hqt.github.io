@@ -17,7 +17,7 @@ export default function IntroSection() {
   return (
     <section className="container lg:max-w-3xl flex flex-col justify-center mx-auto lg:my-20 space-y-4 p-4">
       <h1 className="font-medium text-5xl">Huy Tran</h1>
-      <div className="flex md:space-x-10 md:flex-row flex-col">
+      <div className="flex md:space-x-10 md:flex-row flex-col dark:text-slate-300">
         <div className={classNames("flex-1 flex flex-col space-y-4")}>
           <div>
             I am a student at Fanshawe College in London, ON; pursuing the
@@ -46,7 +46,7 @@ export default function IntroSection() {
             Here are a few technologies that I&apos;ve been working with
             recently:
           </div>
-          <ul className="list-inside list-disc columns-2 font-mono text-gray-500 text-sm">
+          <ul className="list-inside list-disc columns-2 font-mono text-gray-500 dark:text-slate-400 text-sm">
             {technologies.map((text, index) => (
               <li key={index}>{text}</li>
             ))}

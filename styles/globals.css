@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply dark:bg-slate-900 bg-white;
+  }
+}
+
 .leetcode {
   width: 100%;
+  @apply dark:text-slate-400 text-slate-700;
 }
 
 .leetcode code {
-  color: #546e7a;
-  background-color: #f7f9fa;
+  @apply text-black dark:text-white;
+  @apply bg-slate-50 dark:bg-slate-700;
   padding: 2px 4px;
   font-size: 13px;
   border-radius: 3px;
@@ -30,12 +37,14 @@
   white-space: pre-wrap;
   background: #f7f9fa;
   padding: 10px 15px;
-  color: #263238;
+  /* color: #263238; */
   line-height: 1.6;
   font-size: 13px;
   border-radius: 3px;
   margin-bottom: 1em;
   overflow: auto;
+  @apply text-black dark:text-white;
+  @apply bg-slate-50 dark:bg-slate-700;
 }
 
 .leetcode p {

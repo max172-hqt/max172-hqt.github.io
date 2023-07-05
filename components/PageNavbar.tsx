@@ -6,7 +6,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import SecondaryNavbar from "./SecondaryNavbar";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import ThemeButton from "./ThemeButton";
 
 const navItems: Array<[string, string, boolean]> = [
   ["about", "/", false],
@@ -15,7 +16,6 @@ const navItems: Array<[string, string, boolean]> = [
 ];
 
 export default function NavBar() {
-
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
@@ -30,7 +30,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="sticky top-0 z-10 bg-white">
+    <header className="sticky top-0 z-10 bg-white dark:bg-slate-900">
       <div className="xl:container xl:mx-auto sm:flex md:items-center md:px-4 md:py-3">
         <div className="flex items-center justify-between px-4 py-3 md:p-0 font-medium flex-grow">
           {router.pathname === "/" ? (
@@ -93,7 +93,7 @@ export default function NavBar() {
                   (url === "/leetcodes" &&
                     router.pathname === "/leetcodes/[id]")
                   ? "font-semibold text-amber-600"
-                  : "text-slate-700"
+                  : "text-slate-700 dark:text-slate-200"
               )}
               target={external ? "_blank" : undefined}
               rel={external ? "noopenner noreferrer" : undefined}
@@ -101,12 +101,13 @@ export default function NavBar() {
               {title}
             </a>
           ))}
+          <div className="flex justify-end px-2 py-1 mx-2">
+            <ThemeButton />
+          </div>
         </nav>
       </div>
       <div className="lg:hidden">
-        {router.asPath.startsWith("/leetcodes") && (
-          <SecondaryNavbar  />
-        )}
+        {router.asPath.startsWith("/leetcodes") && <SecondaryNavbar />}
       </div>
     </header>
   );

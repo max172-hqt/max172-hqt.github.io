@@ -51,12 +51,12 @@ export default function ProjectSection() {
       <div className="grid lg:grid-cols-3 gap-4">
         {projects.map((project) => (
           <div
-            className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border divide-y"
+            className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border dark:border-slate-600 divide-y"
             key={project.title}
           >
             <div className="flex-grow">
               <div className="pb-4">
-                <h5 className="text-gray-900 font-semibold text-xl">
+                <h5 className="text-gray-900 dark:text-slate-200 font-semibold text-xl">
                   {project.title}
                 </h5>
                 <div className="flex gap-2">
@@ -84,10 +84,10 @@ export default function ProjectSection() {
                   )}
                 </div>
               </div>
-              <div className="text-gray-700">{project.descriptions}</div>
+              <div className="text-gray-700 dark:text-slate-300">{project.descriptions}</div>
             </div>
             <div className="my-4 pt-4">
-              <ul className="list-inside flex text-xs font-mono flex-wrap gap-3">
+              <ul className="list-inside flex text-xs font-mono flex-wrap gap-3 dark:text-slate-400">
                 {project.technologies.map((tech, index) => (
                   <li key={index}>{tech}</li>
                 ))}

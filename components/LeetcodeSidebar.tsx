@@ -23,7 +23,7 @@ export default function LeetcodeSidebar() {
       <div
         className={classNames({
           "flex flex-col justify-between overflow-y-scroll": true, // layout
-          "text-zinc-50 bg-white": true, // colors
+          "bg-white dark:bg-slate-900": true, // colors
           "lg:w-full lg:sticky lg:top-16 top-0 left-0 fixed": true, // positioning
           "lg:h-[calc(100vh_-_64px)] h-full w-[360px]": true, // for height and width
           "transition-transform .3s ease-in-out lg:translate-x-0": true, //animations
@@ -33,11 +33,11 @@ export default function LeetcodeSidebar() {
         <nav className="lg:sticky top-0 px-3 py-4">
           {/* nav items */}
           <ul className="space-y-2">
-            <li className="text-slate-700 flex p-2 font-semibold">
+            <li className="text-slate-700 dark:text-slate-200 flex p-2 font-semibold">
               <div className="flex-grow">Leetcode Problems</div>
               <button
                 type="button"
-                className="text-gray-500 hover:text-amber-700 focus:text-amber-700 focus:outline-none md:hidden"
+                className="text-gray-500 dark:text-slate-400 hover:text-amber-700 focus:text-amber-700 focus:outline-none md:hidden"
                 onClick={() => setSidenavOpen(false)}
               >
                 <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default function LeetcodeSidebar() {
                     {
                       "text-amber-600 font-medium":
                         router.asPath === post.solution,
-                      "text-slate-700": router.asPath !== post.solution,
+                      "text-slate-700 dark:text-slate-400": router.asPath !== post.solution,
                     }
                   )}
                 >
