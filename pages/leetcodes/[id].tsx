@@ -1,9 +1,17 @@
 import Head from "next/head";
 import { getAllPostIds, getPostData, getSortedData } from "../../lib/posts";
 import type { LeetcodeQuestionData, Post, PostData } from "../../types";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { PostContext } from "../../components/layout";
 import type { PostContextType } from "../../components/layout";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useRouter } from "next/router";
 
 const LEETCODE_API_URL = "https://leetcode.com/graphql";
 
@@ -70,12 +78,20 @@ export default function Post({
   posts: Post[];
 }) {
   const title = postData.title.replace(/^0+/, "");
+  const router = useRouter();
   const difficulty: keyof typeof mapColorDifficulty = question.difficulty;
   const { setPosts } = useContext(PostContext) as PostContextType;
+  const [solutionExpanded, setSolutionExpanded] = useState(false);
+  const [problemExpanded, setProblemExpanded] = useState(true);
 
   useEffect(() => {
     setPosts(posts);
   }, [posts, setPosts]);
+
+  useEffect(() => {
+    setProblemExpanded(true);
+    setSolutionExpanded(false);
+  }, [router.asPath]);
 
   return (
     <>
@@ -83,19 +99,57 @@ export default function Post({
         <title>{`${title}`}</title>
       </Head>
 
-      <section className="flex flex-col my-2 md:my-10 mx-5">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tighter leading-tight md:leading-none mb-6 text-center md:text-left">
+      <section className="flex flex-col my-2 md:my-10 mx-3">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-6 md:text-left">
           {title}
         </h1>
-        <p>
+        {/* <p>
           <span style={{ color: mapColorDifficulty[difficulty] }}>
             {difficulty}
           </span>
-        </p>
-        <article
-          className="prose prose-zinc "
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-        ></article>
+        </p> */}
+        <Accordion
+          elevation={0}
+          disableGutters
+          square
+          expanded={problemExpanded}
+          onClick={() => setProblemExpanded(!problemExpanded)}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <div className="text-xl font-bold">Problem Statement</div>
+          </AccordionSummary>
+          <AccordionDetails>
+            <article
+              className="leetcode"
+              dangerouslySetInnerHTML={{ __html: question.content }}
+            ></article>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          elevation={0}
+          disableGutters
+          square
+          expanded={solutionExpanded}
+          onClick={() => setSolutionExpanded(!solutionExpanded)}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <div className="text-xl font-bold">Show Solution</div>
+          </AccordionSummary>
+          <AccordionDetails>
+            <article
+              className="prose prose-zinc text-black"
+              dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+            ></article>
+          </AccordionDetails>
+        </Accordion>
       </section>
     </>
   );

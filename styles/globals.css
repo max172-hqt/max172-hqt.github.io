@@ -2,7 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-code[class*="language-"],
-pre[class*="language-"] {
-  font-size: 0.9rem !important; /* 1em */
+.leetcode {
+  width: 100%;
+}
+
+.leetcode code {
+  color: #546e7a;
+  background-color: #f7f9fa;
+  padding: 2px 4px;
+  font-size: 13px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.leetcode ul {
+  margin-bottom: 1em;
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.leetcode pre {
+  white-space: pre-wrap;
+  background: #f7f9fa;
+  padding: 10px 15px;
+  color: #263238;
+  line-height: 1.6;
+  font-size: 13px;
+  border-radius: 3px;
+  margin-bottom: 1em;
+  overflow: auto;
+}
+
+.leetcode p {
+  margin-bottom: 1em;
+}
+
+.leetcode b,
+.leetcode strong {
+  font-weight: bolder;
+}
+
+@media (prefers-color-scheme: dark) {
+  pre[data-theme="light"],
+  code[data-theme="light"] {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  pre[data-theme="dark"],
+  code[data-theme="dark"] {
+    display: none;
+  }
 }

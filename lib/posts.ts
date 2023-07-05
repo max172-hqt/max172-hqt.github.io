@@ -1,10 +1,13 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import prism from "remark-prism";
 import type { Post } from "../types";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import rehypePrettyCode from "rehype-pretty-code";
 
 type PostData = {
   id: string;
@@ -29,9 +32,17 @@ export async function getPostData(id: string) {
   const fullPath = path.join(postsDir, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
   const matterResult = matter(fileContents);
-  const processedContent = await remark()
-    .use(html, { sanitize: false })
-    .use(prism, { plugins: ["line-numbers"] })
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypePrettyCode, {
+      theme: {
+        dark: "github-dark-dimmed",
+        light: "github-light",
+      },
+    })
+    .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
