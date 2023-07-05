@@ -5,7 +5,6 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 export default function ThemeButton() {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
-  console.log(currentTheme);
 
   return (
     <button

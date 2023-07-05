@@ -53,7 +53,7 @@ export default function LeetcodeSidebar() {
                 <Link
                   href={post.solution}
                   className={classNames(
-                    "flex p-2 rounded-lg hover:bg-gray-100",
+                    "flex p-2 rounded-lg ",
                     {
                       "text-amber-600 font-medium":
                         router.asPath === post.solution,
@@ -61,7 +61,7 @@ export default function LeetcodeSidebar() {
                     }
                   )}
                 >
-                  <span className="ml-3 truncate">
+                  <span className="ml-3 truncate dark:hover:text-slate-200 hover:text-slate-900">
                     {post.problemId}. {post.title}
                   </span>
                 </Link>
