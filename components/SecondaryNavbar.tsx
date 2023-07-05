@@ -10,10 +10,10 @@ export default function SecondaryNavbar() {
   ) as PostContextType;
 
   return (
-    <div className="p-2 flex gap-2 relative top-0  border-b-slate-300 border-b bg-white">
+    <div className="p-2 flex gap-2 relative top-0  border-b-slate-300 border-b dark:border-b-slate-600 bg-white dark:bg-slate-900">
       <button
         type="button"
-        className="block text-gray-500 hover:text-amber-700 focus:text-amber-700 focus:outline-none"
+        className="block text-gray-500 dark:text-slate-200 hover:text-amber-700 focus:text-amber-700 focus:outline-none"
         onClick={() => setSidenavOpen(true)}
       >
         <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@ export default function SecondaryNavbar() {
       {currentPost && currentPost.solution === router.asPath && (
         <div className="flex">
           <div
-            className="flex items-center text-gray-500"
+            className="flex items-center text-gray-500 dark:text-slate-200"
             onClick={() => setSidenavOpen(true)}
           >
             <div>Leetcode</div>

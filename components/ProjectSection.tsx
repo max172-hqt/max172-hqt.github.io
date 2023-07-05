@@ -51,7 +51,7 @@ export default function ProjectSection() {
       <div className="grid lg:grid-cols-3 gap-4">
         {projects.map((project) => (
           <div
-            className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border dark:border-slate-600 divide-y"
+            className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border dark:border-slate-600 divide-y dark:divide-slate-600"
             key={project.title}
           >
             <div className="flex-grow">

@@ -99,14 +99,15 @@ export default function Post({
         <title>{`${title}`}</title>
       </Head>
 
-      <section className="flex flex-col my-2 md:my-10 mx-3">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-6 md:text-left">
+      <section className="flex flex-col my-2 md:my-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-6 md:text-left mx-3">
           {title}
         </h1>
         {/* <p>
           <span style={{ color: mapColorDifficulty[difficulty] }}>
             {difficulty}
           </span>
+          
         </p> */}
         <Accordion
           elevation={0}
