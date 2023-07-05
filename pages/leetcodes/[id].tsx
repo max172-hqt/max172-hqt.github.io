@@ -81,16 +81,16 @@ export default function Post({
   const router = useRouter();
   const difficulty: keyof typeof mapColorDifficulty = question.difficulty;
   const { setPosts } = useContext(PostContext) as PostContextType;
-  const [solutionExpanded, setSolutionExpanded] = useState(false);
-  const [problemExpanded, setProblemExpanded] = useState(true);
+  const [problemExpanded, setProblemExpanded] = useState(false);
+  const [solutionExpanded, setSolutionExpanded] = useState(true);
 
   useEffect(() => {
     setPosts(posts);
   }, [posts, setPosts]);
 
   useEffect(() => {
-    setProblemExpanded(true);
-    setSolutionExpanded(false);
+    setProblemExpanded(false);
+    setSolutionExpanded(true);
   }, [router.asPath]);
 
   return (
