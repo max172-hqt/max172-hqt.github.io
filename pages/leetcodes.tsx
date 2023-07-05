@@ -1,7 +1,28 @@
 import Head from "next/head";
 import Link from "next/link";
+import { getSortedData } from "../lib/posts";
+import { useContext, useEffect } from "react";
+import { PostContext } from "../components/layout";
+import type { PostContextType } from "../components/layout";
+import type { Post } from "../types";
 
-export default function Leetcodes() {
+export async function getStaticProps() {
+  const posts = getSortedData();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+export default function Leetcodes({ posts }: { posts: Post[] }) {
+  const { setPosts } = useContext(PostContext) as PostContextType;
+
+  useEffect(() => {
+    setPosts(posts);
+  }, [posts, setPosts]);
+
   return (
     <>
       <Head>
@@ -37,13 +58,13 @@ export default function Leetcodes() {
             Leetcode. However, I will try my best to be as clear as possible!
           </p>
           <div>
-          <Link
-            href="/leetcodes/two-sum"
-            className="bg-amber-600 hover:bg-amber-700 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-white"
-          >
-            Solve Two-Sum
-          </Link>
-        </div>
+            <Link
+              href="/leetcodes/two-sum"
+              className="bg-amber-600 hover:bg-amber-700 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-white"
+            >
+              Solve Two-Sum
+            </Link>
+          </div>
         </div>
       </section>
     </>

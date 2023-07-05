@@ -45,7 +45,7 @@ export default function SecondaryNavbar() {
               ></path>
             </svg>
           </div>
-          <div className="font-semibold">{currentPost.title}</div>
+          <div className="font-semibold truncate">{currentPost.title}</div>
         </div>
       )}
     </div>

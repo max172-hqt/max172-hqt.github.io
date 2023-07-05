@@ -8,23 +8,13 @@ import type { PostContextType } from "./layout";
 
 export default function LeetcodeSidebar() {
   const router = useRouter();
-  const { sidenavOpen, setSidenavOpen, setCurrentPost } = useContext(PostContext) as PostContextType
-  const [posts, setPosts] = useState<Post[]>([]);
+  const { sidenavOpen, setSidenavOpen, setCurrentPost, posts } =
+    useContext(PostContext) as PostContextType;
 
   useEffect(() => {
-    (async () => {
-      const res = await fetch("/api/leetcode");
-      const data = await res.json();
-
-      setPosts(data.data);
-    })();
-  }, []);
-
-  useEffect(() => {
-    const post = posts.find((post) => post.solution === router.asPath)
-    setCurrentPost(post != undefined ? post : null)
-  }, [posts, router.asPath, setCurrentPost])
-
+    const post = posts.find((post) => post.solution === router.asPath);
+    setCurrentPost(post != undefined ? post : null);
+  }, [posts, router.asPath, setCurrentPost]);
 
   useEffect(() => setSidenavOpen(false), [router.asPath, setSidenavOpen]);
 

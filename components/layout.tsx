@@ -11,6 +11,8 @@ export type PostContextType = {
   setSidenavOpen: React.Dispatch<React.SetStateAction<boolean>>;
   currentPost: Post | null;
   setCurrentPost: React.Dispatch<React.SetStateAction<Post | null>>;
+  posts: Post[];
+  setPosts: React.Dispatch<React.SetStateAction<Post[]>>;
 };
 export const PostContext = createContext<PostContextType | null>(null);
 
@@ -18,10 +20,18 @@ export default function Layout({ children }: { children: React.ReactElement }) {
   const router = useRouter();
   const [sidenavOpen, setSidenavOpen] = useState(false);
   const [currentPost, setCurrentPost] = useState<Post | null>(null);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   return (
     <PostContext.Provider
-      value={{ sidenavOpen, setSidenavOpen, currentPost, setCurrentPost }}
+      value={{
+        sidenavOpen,
+        setSidenavOpen,
+        currentPost,
+        setCurrentPost,
+        posts,
+        setPosts,
+      }}
     >
       <Head>
         <title>Max Tran</title>

@@ -1,8 +1,9 @@
 import Head from "next/head";
-import { getAllPostIds, getPostData } from "../../lib/posts";
-import styles from "./post.module.css";
-import type { LeetcodeQuestionData, PostData } from "../../types";
-import LeetcodeSidebar from "../../components/LeetcodeSidebar";
+import { getAllPostIds, getPostData, getSortedData } from "../../lib/posts";
+import type { LeetcodeQuestionData, Post, PostData } from "../../types";
+import { useContext, useEffect } from "react";
+import { PostContext } from "../../components/layout";
+import type { PostContextType } from "../../components/layout";
 
 const LEETCODE_API_URL = "https://leetcode.com/graphql";
 
@@ -27,6 +28,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: any }) {
   const postData = await getPostData(params.id);
+  const posts = getSortedData();
 
   const res = await fetch(LEETCODE_API_URL, {
     method: "POST",
@@ -47,6 +49,7 @@ export async function getStaticProps({ params }: { params: any }) {
     props: {
       postData,
       question: leetcodeData.data.question,
+      posts,
     },
   };
 }
@@ -60,12 +63,19 @@ const mapColorDifficulty = {
 export default function Post({
   postData,
   question,
+  posts,
 }: {
   postData: PostData;
   question: LeetcodeQuestionData;
+  posts: Post[];
 }) {
   const title = postData.title.replace(/^0+/, "");
   const difficulty: keyof typeof mapColorDifficulty = question.difficulty;
+  const { setPosts } = useContext(PostContext) as PostContextType;
+
+  useEffect(() => {
+    setPosts(posts);
+  }, [posts, setPosts]);
 
   return (
     <>
@@ -73,8 +83,8 @@ export default function Post({
         <title>{`${title}`}</title>
       </Head>
 
-      <section className="flex flex-col my-10 sm:mx-0 mx-5">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
+      <section className="flex flex-col my-2 md:my-10 mx-5">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight md:leading-none mb-6 text-center md:text-left">
           {title}
         </h1>
         <p>
