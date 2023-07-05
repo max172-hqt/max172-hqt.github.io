@@ -84,7 +84,7 @@ export default function Post({
       </Head>
 
       <section className="flex flex-col my-2 md:my-10 mx-5">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight md:leading-none mb-6 text-center md:text-left">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tighter leading-tight md:leading-none mb-6 text-center md:text-left">
           {title}
         </h1>
         <p>
