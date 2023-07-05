@@ -6,6 +6,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 import SecondaryNavbar from "./SecondaryNavbar";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const navItems: Array<[string, string, boolean]> = [
   ["about", "/", false],
@@ -13,7 +14,8 @@ const navItems: Array<[string, string, boolean]> = [
   ["leetcode", "/leetcodes", false],
 ];
 
-export default function NavBar({ setSidenavOpen }) {
+export default function NavBar() {
+
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
@@ -28,8 +30,8 @@ export default function NavBar({ setSidenavOpen }) {
   };
 
   return (
-    <header className="sticky top-0">
-      <div className="xl:container xl:mx-auto sm:flex md:items-center md:px-4 md:py-3 bg-white z-10 ">
+    <header className="sticky top-0 z-10 bg-white">
+      <div className="xl:container xl:mx-auto sm:flex md:items-center md:px-4 md:py-3">
         <div className="flex items-center justify-between px-4 py-3 md:p-0 font-medium flex-grow">
           {router.pathname === "/" ? (
             <div className="flex space-x-4 items-center justify-center">
@@ -63,19 +65,7 @@ export default function NavBar({ setSidenavOpen }) {
               className="block text-gray-500 hover:text-amber-700 focus:text-amber-700 focus:outline-none"
               onClick={() => setOpen(!open)}
             >
-              <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                {open ? (
-                  <path
-                    fillRule="evenodd"
-                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                  />
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                  />
-                )}
-              </svg>
+              <MoreVertIcon />
             </button>
           </div>
         </div>
@@ -115,7 +105,7 @@ export default function NavBar({ setSidenavOpen }) {
       </div>
       <div className="lg:hidden">
         {router.asPath.startsWith("/leetcodes") && (
-          <SecondaryNavbar setSidenavOpen={setSidenavOpen} />
+          <SecondaryNavbar  />
         )}
       </div>
     </header>

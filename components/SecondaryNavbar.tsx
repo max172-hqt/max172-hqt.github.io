@@ -1,8 +1,13 @@
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { PostContext } from "./layout";
+import type { PostContextType } from "./layout";
 
-export default function SecondaryNavbar({ setSidenavOpen }) {
+export default function SecondaryNavbar() {
   const router = useRouter();
-  console.log(router)
+  const { currentPost, setSidenavOpen } = useContext(
+    PostContext
+  ) as PostContextType;
 
   return (
     <div className="p-2 flex gap-2 relative top-0  border-b-slate-300 border-b bg-white">
@@ -18,9 +23,12 @@ export default function SecondaryNavbar({ setSidenavOpen }) {
           />
         </svg>
       </button>
-      {true && (
+      {currentPost && currentPost.solution === router.asPath && (
         <div className="flex">
-          <div className="flex items-center text-gray-500">
+          <div
+            className="flex items-center text-gray-500"
+            onClick={() => setSidenavOpen(true)}
+          >
             <div>Leetcode</div>
             <svg
               width="3"
@@ -37,7 +45,7 @@ export default function SecondaryNavbar({ setSidenavOpen }) {
               ></path>
             </svg>
           </div>
-          <div className="font-semibold">TODO</div>
+          <div className="font-semibold">{currentPost.title}</div>
         </div>
       )}
     </div>

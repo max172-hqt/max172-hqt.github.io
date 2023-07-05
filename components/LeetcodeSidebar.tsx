@@ -1,17 +1,15 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import type { Post } from "..";
+import { PostContext } from "./layout";
+import type { PostContextType } from "./layout";
 
-export default function LeetcodeSidebar({ sidenavOpen, setSidenavOpen }) {
+export default function LeetcodeSidebar() {
   const router = useRouter();
+  const { sidenavOpen, setSidenavOpen, setCurrentPost } = useContext(PostContext) as PostContextType
   const [posts, setPosts] = useState<Post[]>([]);
-
-  const currentPost = useMemo(
-    () => posts.find((post) => post.solution === router.asPath),
-    [posts, router.asPath]
-  );
 
   useEffect(() => {
     (async () => {
@@ -21,6 +19,12 @@ export default function LeetcodeSidebar({ sidenavOpen, setSidenavOpen }) {
       setPosts(data.data);
     })();
   }, []);
+
+  useEffect(() => {
+    const post = posts.find((post) => post.solution === router.asPath)
+    setCurrentPost(post != undefined ? post : null)
+  }, [posts, router.asPath, setCurrentPost])
+
 
   useEffect(() => setSidenavOpen(false), [router.asPath, setSidenavOpen]);
 
