@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { getSortedData } from '../../lib/posts';
+import type { Post } from '../../types';
 
 type Data = {
   data: Post[]

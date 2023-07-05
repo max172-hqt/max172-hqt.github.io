@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useMemo, useState } from "react";
-import type { Post } from "..";
+import type { Post } from "../types";
 import { PostContext } from "./layout";
 import type { PostContextType } from "./layout";
 

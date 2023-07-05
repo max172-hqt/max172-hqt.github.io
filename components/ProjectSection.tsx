@@ -46,7 +46,7 @@ const projects = [
 export default function ProjectSection() {
   return (
     <section className="container max-w-5xl flex flex-col justify-center my-20 space-y-4 px-4 mx-auto">
-      <h1 className="text-3xl font-semibold">What I've built</h1>
+      <h1 className="text-3xl font-semibold">What I&apos;ve built</h1>
 
       <div className="grid lg:grid-cols-3 gap-4">
         {projects.map((project) => (

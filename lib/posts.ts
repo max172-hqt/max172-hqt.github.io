@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import prism from "remark-prism";
+import type { Post } from "../types";
 
 type PostData = {
   id: string;
@@ -66,6 +67,8 @@ export function getSortedData(): Post[] {
     .sort((a, b) => (a.title > b.title ? 1 : -1))
     .map((post) => ({
       ...post,
+      link: post.link,
+      topic: post.topic,
       problemId: post.title.substr(0, 4).replace(/^0+/, ""),
       title: post.title.substr(5),
       solution: `/leetcodes/${post.id}`,

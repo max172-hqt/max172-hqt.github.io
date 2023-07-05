@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import styles from "./post.module.css";
-import type { LeetcodeQuestionData, PostData } from "../..";
+import type { LeetcodeQuestionData, PostData } from "../../types";
 import LeetcodeSidebar from "../../components/LeetcodeSidebar";
 
 const LEETCODE_API_URL = "https://leetcode.com/graphql";

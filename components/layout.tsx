@@ -4,7 +4,7 @@ import PageFooter from "./PageFooter";
 import PageNavbar from "./PageNavbar";
 import { useRouter } from "next/router";
 import LeetcodeSidebar from "./LeetcodeSidebar";
-import type { Post } from "..";
+import type { Post } from "../types";
 
 export type PostContextType = {
   sidenavOpen: boolean;
