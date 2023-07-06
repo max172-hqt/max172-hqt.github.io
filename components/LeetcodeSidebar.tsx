@@ -37,7 +37,7 @@ export default function LeetcodeSidebar() {
               <div className="flex-grow">Leetcode Problems</div>
               <button
                 type="button"
-                className="text-gray-500 dark:text-slate-400 hover:text-amber-700 focus:text-amber-700 focus:outline-none md:hidden"
+                className="text-gray-500 dark:text-slate-300 hover:text-amber-700 focus:text-amber-700 focus:outline-none md:hidden"
                 onClick={() => setSidenavOpen(false)}
               >
                 <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default function LeetcodeSidebar() {
                     {
                       "text-amber-600 font-medium":
                         router.asPath === post.solution,
-                      "text-slate-700 dark:text-slate-400": router.asPath !== post.solution,
+                      "text-slate-700 dark:text-slate-300": router.asPath !== post.solution,
                     }
                   )}
                 >

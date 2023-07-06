@@ -43,10 +43,9 @@ export default function IntroSection() {
             drugs with Prof. Rundensteiner.
           </div>
           <div>
-            Here are a few technologies that I&apos;ve been working with
-            recently:
+            Technologies that I have been working with are:
           </div>
-          <ul className="list-inside list-disc columns-2 font-mono text-gray-500 dark:text-slate-400 text-sm">
+          <ul className="list-inside list-disc columns-2 font-mono text-gray-500 dark:text-slate-300 text-sm">
             {technologies.map((text, index) => (
               <li key={index}>{text}</li>
             ))}

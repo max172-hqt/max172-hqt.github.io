@@ -102,10 +102,10 @@ export default function Resume() {
                 <div className="font-bold dark:text-slate-200">
                   {school.major}
                 </div>
-                <div className="mb-2 dark:text-slate-400">
+                <div className="mb-2 dark:text-slate-300">
                   {school.schoolName}
                 </div>
-                <ul className="list-inside list-disc mb-4 dark:text-slate-400">
+                <ul className="list-inside list-disc mb-4 dark:text-slate-300">
                   {school.extras.map((text, index) => (
                     <li key={index}>{text}</li>
                   ))}
@@ -139,8 +139,8 @@ export default function Resume() {
               </div>
               <div className="col-span-3 sm:col-span-2 flex flex-col">
                 <div className="font-bold dark:text-slate-200">{job.title}</div>
-                <div className="mb-2 dark:text-slate-400">{job.employer}</div>
-                <ul className="list-inside list-disc dark:text-slate-400">
+                <div className="mb-2 dark:text-slate-300">{job.employer}</div>
+                <ul className="list-inside list-disc dark:text-slate-300">
                   {job.duties.map((text, index) => (
                     <li key={index}>{text}</li>
                   ))}

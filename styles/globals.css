@@ -10,11 +10,11 @@
 
 .leetcode {
   width: 100%;
-  @apply dark:text-slate-400 text-slate-700;
+  @apply dark:text-slate-300 text-slate-700;
 }
 
 .leetcode code {
-  @apply text-black dark:text-white;
+  @apply text-black dark:text-slate-300;
   @apply bg-slate-50 dark:bg-slate-700;
   padding: 2px 4px;
   font-size: 13px;
@@ -43,7 +43,7 @@
   border-radius: 3px;
   margin-bottom: 1em;
   overflow: auto;
-  @apply text-black dark:text-white;
+  @apply text-black dark:text-slate-300;
   @apply bg-slate-50 dark:bg-slate-700;
 }
 

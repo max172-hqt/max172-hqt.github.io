@@ -21,12 +21,12 @@ export default function NavBar() {
 
   const Icon = ({ name }: { name: string }) => {
     if (name === "github") {
-      return <GitHubIcon fontSize="inherit" />;
+      return <GitHubIcon fontSize="inherit" titleAccess="Github" />;
     }
     if (name === "linkedin") {
-      return <LinkedInIcon fontSize="inherit" />;
+      return <LinkedInIcon fontSize="inherit" titleAccess="LinkedIn" />;
     }
-    return <EmailIcon fontSize="inherit" />;
+    return <EmailIcon fontSize="inherit" titleAccess="Email" />;
   };
 
   return (

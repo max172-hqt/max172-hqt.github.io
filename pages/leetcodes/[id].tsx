@@ -118,13 +118,13 @@ export default function Post({
           className="dark:bg-slate-900"
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon className="dark:text-white"/>}
+            expandIcon={<ExpandMoreIcon className="dark:text-slate-200"/>}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <div className="text-xl font-bold dark:text-white">Problem Statement</div>
+            <div className="text-xl font-bold dark:text-slate-200">Problem Statement</div>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className="border-l border-l-slate-700 ml-4">
             <article
               className="leetcode"
               dangerouslySetInnerHTML={{ __html: question.content }}
@@ -140,15 +140,15 @@ export default function Post({
           className="dark:bg-slate-900"
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon className="dark:text-white"/>}
+            expandIcon={<ExpandMoreIcon className="dark:text-slate-200"/>}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <div className="text-xl font-bold dark:text-white">Show Solution</div>
+            <div className="text-xl font-bold dark:text-slate-200">Show Solution</div>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className="border-l border-l-slate-700 ml-4">
             <article
-              className="prose dark:prose-invert prose-slate text-black dark:text-slate-400"
+              className="prose dark:prose-invert prose-slate text-black dark:text-slate-300"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
             ></article>
           </AccordionDetails>

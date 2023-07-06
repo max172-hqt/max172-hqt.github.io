@@ -34,7 +34,7 @@ export default function Leetcodes({ posts }: { posts: Post[] }) {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left first-letter dark:text-slate-200">
           Welcome to my notes
         </h1>
-        <div className="flex flex-col gap-4 leading-8 dark:text-slate-400">
+        <div className="flex flex-col gap-4 leading-8 dark:text-slate-300">
           <p>
             Besides software development, I also love to study and solve Data
             Structure and Algorithms problems to be better at problem solving,
