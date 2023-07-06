@@ -88,7 +88,7 @@ export default function NavBar() {
               key={title}
               href={url}
               className={classNames(
-                "block px-2 py-1 mx-2 rounded hover:text-amber-600 transition ease-in-out duration-300 text-end",
+                "block px-2 py-1 mx-2 rounded hover:text-amber-600 hover:dark:text-amber-600 transition ease-in-out duration-300 text-end",
                 router.pathname === url ||
                   (url === "/leetcodes" &&
                     router.pathname === "/leetcodes/[id]")

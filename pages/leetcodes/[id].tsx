@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useRouter } from "next/router";
+import classNames from "classnames";
 
 const LEETCODE_API_URL = "https://leetcode.com/graphql";
 
@@ -81,16 +82,16 @@ export default function Post({
   const router = useRouter();
   const difficulty: keyof typeof mapColorDifficulty = question.difficulty;
   const { setPosts } = useContext(PostContext) as PostContextType;
-  const [problemExpanded, setProblemExpanded] = useState(false);
-  const [solutionExpanded, setSolutionExpanded] = useState(true);
+  const [problemExpanded, setProblemExpanded] = useState(true);
+  const [solutionExpanded, setSolutionExpanded] = useState(false);
 
   useEffect(() => {
     setPosts(posts);
   }, [posts, setPosts]);
 
   useEffect(() => {
-    setProblemExpanded(false);
-    setSolutionExpanded(true);
+    setProblemExpanded(true);
+    setSolutionExpanded(false);
   }, [router.asPath]);
 
   return (
@@ -103,28 +104,39 @@ export default function Post({
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-6 md:text-left mx-3">
           {title}
         </h1>
-        {/* <p>
-          <span style={{ color: mapColorDifficulty[difficulty] }}>
+        <div className="flex mx-3 mb-2 items-center gap-4">
+          <div style={{ color: mapColorDifficulty[difficulty] }}>
             {difficulty}
-          </span>
-          
-        </p> */}
+          </div>
+          <a
+            href={postData.link}
+            target="_blank"
+            className="hover:text-amber-600 hover:dark:text-amber-600 transition ease-in-out duration-300 font-semibold text-slate-800 dark:text-slate-200"
+            rel="noreferrer"
+          >
+            Try it yourself
+          </a>
+        </div>
         <Accordion
           elevation={0}
           disableGutters
           square
           expanded={problemExpanded}
-          onClick={() => setProblemExpanded(!problemExpanded)}
-          className="dark:bg-slate-900"
+          className={classNames("dark:bg-slate-900", {
+            "mb-6": problemExpanded,
+          })}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon className="dark:text-slate-200"/>}
+            expandIcon={<ExpandMoreIcon className="text-amber-600" />}
             aria-controls="panel1a-content"
             id="panel1a-header"
+            onClick={() => setProblemExpanded(!problemExpanded)}
           >
-            <div className="text-xl font-bold dark:text-slate-200">Problem Statement</div>
+            <div className="text-xl font-bold text-amber-600">
+              Problem Statement
+            </div>
           </AccordionSummary>
-          <AccordionDetails className="border-l border-l-slate-700 ml-4">
+          <AccordionDetails className="border-l dark:border-l-slate-700 border-l-slate-200 ml-4">
             <article
               className="leetcode"
               dangerouslySetInnerHTML={{ __html: question.content }}
@@ -136,17 +148,19 @@ export default function Post({
           disableGutters
           square
           expanded={solutionExpanded}
-          onClick={() => setSolutionExpanded(!solutionExpanded)}
           className="dark:bg-slate-900"
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon className="dark:text-slate-200"/>}
+            expandIcon={<ExpandMoreIcon className="text-amber-600" />}
             aria-controls="panel1a-content"
             id="panel1a-header"
+            onClick={() => setSolutionExpanded(!solutionExpanded)}
           >
-            <div className="text-xl font-bold dark:text-slate-200">Show Solution</div>
+            <div className="text-xl font-bold text-amber-600">
+              Notes & Solution
+            </div>
           </AccordionSummary>
-          <AccordionDetails className="border-l border-l-slate-700 ml-4">
+          <AccordionDetails className="border-l dark:border-l-slate-700 border-b-slate-200 ml-4">
             <article
               className="prose dark:prose-invert prose-slate text-black dark:text-slate-300"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml }}

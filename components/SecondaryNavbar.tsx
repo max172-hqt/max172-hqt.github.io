@@ -10,7 +10,7 @@ export default function SecondaryNavbar() {
   ) as PostContextType;
 
   return (
-    <div className="p-2 flex gap-2 relative top-0  border-b-slate-300 border-b dark:border-b-slate-600 bg-white dark:bg-slate-900">
+    <div className="container p-2 flex gap-2 relative top-0 border-b-slate-300 border-b dark:border-b-slate-600 bg-white dark:bg-slate-900">
       <button
         type="button"
         className="block text-gray-500 dark:text-slate-200 hover:text-amber-700 focus:text-amber-700 focus:outline-none"
@@ -24,7 +24,7 @@ export default function SecondaryNavbar() {
         </svg>
       </button>
       {currentPost && currentPost.solution === router.asPath && (
-        <div className="flex">
+        <>
           <div
             className="flex items-center text-gray-500 dark:text-slate-200"
             onClick={() => setSidenavOpen(true)}
@@ -45,8 +45,8 @@ export default function SecondaryNavbar() {
               ></path>
             </svg>
           </div>
-          <div className="font-semibold truncate">{currentPost.title}</div>
-        </div>
+          <div className="font-semibold truncate overflow-hidden">{currentPost.title}</div>
+        </>
       )}
     </div>
   );
