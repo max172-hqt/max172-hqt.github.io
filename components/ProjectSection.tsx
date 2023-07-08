@@ -22,7 +22,7 @@ const projects = [
     descriptions:
       "An iOS application to show current temperature and weather forecast information through a Map View by adding different location pins on the map. ",
     technologies: ["UIKit", "Swift", "WeatherAPI", "MapKit"],
-    external: "TODO",
+    github: "https://github.com/max172-hqt/WeatherApp",
     imageVertical: true,
   },
   {
