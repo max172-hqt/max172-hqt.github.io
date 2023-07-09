@@ -30,7 +30,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="sticky top-0 z-10 bg-white dark:bg-slate-900">
+    <header className="sticky top-0 z-10 dark:bg-slate-900 backdrop-blur bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75 transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06]">
       <div className="xl:container xl:mx-auto sm:flex md:items-center md:px-4 md:py-3">
         <div className="flex items-center justify-between px-4 py-3 md:p-0 font-medium flex-grow">
           {router.pathname === "/" ? (

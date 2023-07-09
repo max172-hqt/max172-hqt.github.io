@@ -10,7 +10,7 @@ export default function SecondaryNavbar() {
   ) as PostContextType;
 
   return (
-    <div className="container p-2 flex gap-2 relative top-0 border-b-slate-300 border-b dark:border-b-slate-600 bg-white dark:bg-slate-900">
+    <div className="p-2 flex gap-2 relative top-0 border-b-slate-900/10 border-b dark:border-slate-50/[0.06]">
       <button
         type="button"
         className="block text-gray-500 dark:text-slate-200 hover:text-amber-700 focus:text-amber-700 focus:outline-none"
