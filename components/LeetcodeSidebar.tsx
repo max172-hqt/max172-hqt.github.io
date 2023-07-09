@@ -1,15 +1,23 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { Post } from "../types";
 import { PostContext } from "./layout";
 import type { PostContextType } from "./layout";
+import { useOnClickOutside } from "usehooks-ts";
 
 export default function LeetcodeSidebar() {
   const router = useRouter();
-  const { sidenavOpen, setSidenavOpen, setCurrentPost, posts } =
-    useContext(PostContext) as PostContextType;
+  const ref = useRef(null);
+
+  const { sidenavOpen, setSidenavOpen, setCurrentPost, posts } = useContext(
+    PostContext
+  ) as PostContextType;
+
+  const handleClickOutside = () => {
+    if (sidenavOpen) setSidenavOpen(false);
+  };
 
   useEffect(() => {
     const post = posts.find((post) => post.solution === router.asPath);
@@ -17,6 +25,7 @@ export default function LeetcodeSidebar() {
   }, [posts, router.asPath, setCurrentPost]);
 
   useEffect(() => setSidenavOpen(false), [router.asPath, setSidenavOpen]);
+  useOnClickOutside(ref, handleClickOutside);
 
   return (
     <div className="z-50">
@@ -29,6 +38,7 @@ export default function LeetcodeSidebar() {
           "transition-transform .3s ease-in-out lg:translate-x-0": true, //animations
           "-translate-x-full ": !sidenavOpen, //hide sidebar to the left when closed
         })}
+        ref={ref}
       >
         <nav className="lg:sticky top-0 px-3 py-4">
           {/* nav items */}
@@ -52,14 +62,12 @@ export default function LeetcodeSidebar() {
               <li key={post.title}>
                 <Link
                   href={post.solution}
-                  className={classNames(
-                    "flex p-2 rounded-lg ",
-                    {
-                      "text-amber-600 font-medium":
-                        router.asPath === post.solution,
-                      "text-slate-700 dark:text-slate-300": router.asPath !== post.solution,
-                    }
-                  )}
+                  className={classNames("flex p-2 rounded-lg ", {
+                    "text-amber-600 font-medium":
+                      router.asPath === post.solution,
+                    "text-slate-700 dark:text-slate-300":
+                      router.asPath !== post.solution,
+                  })}
                 >
                   <span className="ml-3 truncate dark:hover:text-slate-200 hover:text-slate-900">
                     {post.problemId}. {post.title}
