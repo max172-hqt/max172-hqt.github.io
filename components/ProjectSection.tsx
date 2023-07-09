@@ -48,7 +48,7 @@ export default function ProjectSection() {
     <section className="container max-w-5xl flex flex-col justify-center my-20 space-y-4 px-4 mx-auto">
       <h1 className="text-3xl font-semibold">What I&apos;ve built</h1>
 
-      <div className="grid lg:grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
         {projects.map((project) => (
           <div
             className="relative flex flex-col space-y-4 p-4 rounded overflow-hidden border dark:border-slate-600 divide-y dark:divide-slate-600"

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import PageFooter from "./PageFooter";
 import PageNavbar from "./PageNavbar";
 import { useRouter } from "next/router";
@@ -21,6 +21,14 @@ export default function Layout({ children }: { children: React.ReactElement }) {
   const [sidenavOpen, setSidenavOpen] = useState(false);
   const [currentPost, setCurrentPost] = useState<Post | null>(null);
   const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    if (sidenavOpen) {
+      document.body.classList.add("overflow-hidden")
+    } else {
+      document.body.classList.remove("overflow-hidden")
+    }
+  }, [sidenavOpen])
 
   return (
     <PostContext.Provider
