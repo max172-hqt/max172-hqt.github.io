@@ -55,6 +55,14 @@ export default function Layout({ children }: { children: React.ReactElement }) {
           </>
         )}
       </div>
+      {sidenavOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
+          id="headlessui-dialog-overlay-:r3:"
+          aria-hidden="true"
+          data-headlessui-state="open"
+        ></div>
+      )}
     </PostContext.Provider>
   );
 }
