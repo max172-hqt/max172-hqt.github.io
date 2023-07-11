@@ -101,7 +101,7 @@ export default function Post({
       </Head>
 
       <section className="flex flex-col my-2 md:my-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-6 md:text-left mx-3">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 md:text-left mx-3">
           {title}
         </h1>
         <div className="flex mx-3 mb-2 items-center gap-4">

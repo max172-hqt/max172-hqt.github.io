@@ -16,7 +16,7 @@ const technologies = [
 export default function IntroSection() {
   return (
     <section className="container lg:max-w-3xl flex flex-col justify-center mx-auto lg:my-20 space-y-4 p-4">
-      <h1 className="text-5xl text-amber-600">Huy Tran</h1>
+      <h1 className="text-5xl text-amber-600 font-semibold">Huy Tran</h1>
       <div className="flex md:space-x-10 md:flex-row flex-col dark:text-slate-300">
         <div className={classNames("flex-1 flex flex-col space-y-4")}>
           <div>

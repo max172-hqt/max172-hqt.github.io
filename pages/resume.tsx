@@ -75,7 +75,7 @@ export default function Resume() {
   return (
     <section className="container max-w-3xl flex flex-col justify-center my-5 sm:my-10 px-4 mx-auto gap-8">
       <div className="flex items-center">
-        <h1 className="text-3xl sm:text-5xl font-medium flex-grow dark:text-slate-200">
+        <h1 className="text-3xl sm:text-5xl font-semibold flex-grow dark:text-slate-200">
           Resume
         </h1>
         <div>

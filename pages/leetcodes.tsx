@@ -30,8 +30,8 @@ export default function Leetcodes({ posts }: { posts: Post[] }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
 
-      <section className="flex flex-col my-10 sm:mx-0 mx-5 max-w-3xl">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left first-letter dark:text-slate-200">
+      <section className="flex flex-col my-10 mx-5 max-w-3xl">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl mb-12 text-center md:text-left first-letter dark:text-slate-200 font-semibold">
           Welcome to my notes
         </h1>
         <div className="flex flex-col gap-4 leading-8 dark:text-slate-300">
