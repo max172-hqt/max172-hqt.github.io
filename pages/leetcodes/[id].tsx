@@ -128,8 +128,8 @@ export default function Post({
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon className="text-amber-600" />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
+            aria-controls="problem-content"
+            id="problem-header"
             onClick={() => setProblemExpanded(!problemExpanded)}
           >
             <div className="text-xl font-bold text-amber-600">
@@ -152,8 +152,8 @@ export default function Post({
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon className="text-amber-600" />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
+            aria-controls="solution-content"
+            id="solution-header"
             onClick={() => setSolutionExpanded(!solutionExpanded)}
           >
             <div className="text-xl font-bold text-amber-600">

@@ -1,3 +1,5 @@
+import DownloadIcon from "@mui/icons-material/Download";
+
 const education = [
   {
     schoolName: "Fanshawe College, London, ON",
@@ -80,21 +82,23 @@ export default function Resume() {
           <a
             href="/Huy_Tran___Resume.pdf"
             target="_blank"
-            className="bg-amber-600 hover:bg-amber-700 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-white"
+            className="bg-amber-700 hover:bg-amber-800 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-white inline-flex items-center gap-2"
             rel="noreferrer"
+            aria-label="View Resume PDF"
           >
+            <DownloadIcon fontSize="medium" />
             PDF Version
           </a>
         </div>
       </div>
 
-      <div className="p-4 flex flex-col gap-4 rounded overflow-hidden border dark:border-slate-600">
-        <h2 className="font-bold text-2xl dark:text-slate-200">Education</h2>
+      <div className="flex flex-col gap-4 rounded overflow-hidden">
+        <h2 className="font-medium text-2xl text-amber-600">Education</h2>
         <div className="divide-y dark:divide-slate-600">
           {education.map((school) => (
-            <div className="grid grid-cols-3 py-4" key={school.time}>
+            <div className="grid grid-cols-3 py-4 gap-4" key={school.time}>
               <div className="col-span-3 sm:col-span-1 justify-self-start">
-                <span className="inline-block bg-amber-600 text-gray-50 px-2 rounded font-mono text-sm">
+                <span className="inline-block dark:text-emerald-400 font-mono text-sm font-medium">
                   {school.time}
                 </span>
               </div>
@@ -125,15 +129,16 @@ export default function Resume() {
           ))}
         </div>
       </div>
+
       {/* End Education */}
 
-      <div className="p-4 flex flex-col gap-4 rounded overflow-hidden border dark:border-slate-600 mb-16">
-        <h2 className="font-bold text-2xl">Experience</h2>
+      <div className="flex flex-col gap-4 rounded overflow-hidden  mb-16">
+        <h2 className="font-medium text-2xl text-amber-600">Experience</h2>
         <div className="divide-y dark:divide-slate-600">
           {experience.map((job) => (
-            <div className="grid grid-cols-3 py-4" key={job.time}>
+            <div className="grid grid-cols-3 py-4 gap-4" key={job.time}>
               <div className="col-span-3 sm:col-span-1 justify-self-start">
-                <span className="inline-block bg-amber-600 text-gray-50 px-2 rounded font-mono text-sm">
+                <span className="inline-block dark:text-emerald-400  font-mono text-sm font-medium">
                   {job.time}
                 </span>
               </div>

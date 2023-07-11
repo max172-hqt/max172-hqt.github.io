@@ -16,15 +16,15 @@ const technologies = [
 export default function IntroSection() {
   return (
     <section className="container lg:max-w-3xl flex flex-col justify-center mx-auto lg:my-20 space-y-4 p-4">
-      <h1 className="font-medium text-5xl">Huy Tran</h1>
+      <h1 className="text-5xl text-amber-600">Huy Tran</h1>
       <div className="flex md:space-x-10 md:flex-row flex-col dark:text-slate-300">
         <div className={classNames("flex-1 flex flex-col space-y-4")}>
           <div>
-            I am a student at Fanshawe College in London, ON; pursuing the
-            post-graduate program in Mobile Application Development. I have 4
-            years of work experience in Frontend and Web Automation and been
-            expanding my knowledge in iOS, Android and Cross-platform mobile
-            development.
+            I am a Software Engineer with experience in Web Development
+            and Test Automation. Previously, I was a Software Engineer at Got It
+            AI, an AI start-up based in Silicon Valley. Currently, I am a
+            student at Fanshawe College (London, ON), pursuing postgraduate
+            program in Mobile Application Development.
           </div>
           <div>
             I completed my Bachelor’s degree in Computer Science at Worcester
@@ -34,7 +34,7 @@ export default function IntroSection() {
               target="_blank"
               rel="noreferrer"
               className={classNames(
-                "text-amber-600 rounded hover:text-amber-700 transition ease-in-out duration-300"
+                "text-amber-600 rounded hover:text-amber-700 transition ease-in-out duration-300 font-medium"
               )}
             >
               Visual Analytics System
@@ -42,17 +42,15 @@ export default function IntroSection() {
             to visualize adversary interactions of two or more drugs among 200+
             drugs with Prof. Rundensteiner.
           </div>
-          <div>
-            Technologies that I have been working with are:
-          </div>
+          <div>Technologies that I have been working with are:</div>
           <ul className="list-inside list-disc columns-2 font-mono text-gray-500 dark:text-slate-300 text-sm">
             {technologies.map((text, index) => (
               <li key={index}>{text}</li>
             ))}
           </ul>
         </div>
-        <div className="md:w-60 mt-4">
-          <Image src={profilePic} alt="Picture of Huy" />
+        <div className="mt-4 flex justify-center items-start">
+          <Image src={profilePic} alt="Picture of Huy" className="w-60" />
         </div>
       </div>
     </section>

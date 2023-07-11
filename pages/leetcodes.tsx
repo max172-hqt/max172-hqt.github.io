@@ -46,7 +46,7 @@ export default function Leetcodes({ posts }: { posts: Post[] }) {
               href="https://neetcode.io/practice"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-amber-600 transition ease-in-out duration-300 text-amber-500"
+              className="hover:text-amber-700 transition ease-in-out duration-300 text-amber-600 font-medium"
             >
               neetcode.com
             </a>
@@ -60,7 +60,7 @@ export default function Leetcodes({ posts }: { posts: Post[] }) {
           <div>
             <Link
               href="/leetcodes/two-sum"
-              className="bg-amber-600 hover:bg-amber-700 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-white"
+              className="bg-amber-700 hover:bg-amber-800 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-white"
             >
               Solve Two-Sum
             </Link>

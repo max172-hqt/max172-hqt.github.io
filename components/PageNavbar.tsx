@@ -46,6 +46,7 @@ export default function NavBar() {
                   target="_blank"
                   className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
                   rel="noreferrer"
+                  aria-label={title}
                 >
                   <Icon name={title} />
                 </a>
@@ -64,6 +65,7 @@ export default function NavBar() {
               type="button"
               className="block text-gray-500 hover:text-amber-700 focus:text-amber-700 focus:outline-none"
               onClick={() => setOpen(!open)}
+              aria-label="Problem List"
             >
               <MoreVertIcon />
             </button>

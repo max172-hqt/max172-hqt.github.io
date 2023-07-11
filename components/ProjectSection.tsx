@@ -46,7 +46,7 @@ const projects = [
 export default function ProjectSection() {
   return (
     <section className="container max-w-5xl flex flex-col justify-center my-20 space-y-4 px-4 mx-auto">
-      <h1 className="text-3xl font-semibold">What I&apos;ve built</h1>
+      <h2 className="text-3xl font-medium">Things I&apos;ve built</h2>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
         {projects.map((project) => (
@@ -56,9 +56,9 @@ export default function ProjectSection() {
           >
             <div className="flex-grow">
               <div className="pb-4">
-                <h5 className="text-gray-900 dark:text-slate-200 font-semibold text-xl">
+                <h3 className="text-gray-900 dark:text-slate-200 font-semibold text-xl">
                   {project.title}
-                </h5>
+                </h3>
                 <div className="flex gap-2">
                   {project.github && (
                     <a
@@ -67,6 +67,7 @@ export default function ProjectSection() {
                       target="_blank"
                       className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
                       rel="noreferrer"
+                      aria-label="Github"
                     >
                       <GitHubIcon fontSize="inherit" />
                     </a>
@@ -78,6 +79,7 @@ export default function ProjectSection() {
                       target="_blank"
                       className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
                       rel="noreferrer"
+                      aria-label="External Link"
                     >
                       <OpenInNewIcon fontSize="inherit" />
                     </a>

@@ -10,6 +10,7 @@ export default function ThemeButton() {
     <button
       onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
       className="text-center inline-flex items-center justify-end hover:text-amber-600 transition ease-in-out duration-300 text-2xl dark:text-slate-200"
+      aria-label="Theme Button"
     >
       {currentTheme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
     </button>
