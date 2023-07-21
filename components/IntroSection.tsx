@@ -11,6 +11,9 @@ const technologies = [
   "NextJS",
   "Selenium",
   "Wordpress",
+  "PHP",
+  "Symfony",
+  "Laravel",
 ];
 
 export default function IntroSection() {

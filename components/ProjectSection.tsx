@@ -3,6 +3,13 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const projects = [
   {
+    title: "Budget Wise",
+    descriptions:
+      "A PHP web application to track trip expenses and provide suggestions on resolving debts among members in the trip. PHP, Twig, Doctrine, Symfony components.",
+    technologies: ["PHP", "Twig", "Doctrine", "Symfony HTTP"],
+    github: "https://github.com/max172-hqt/budgetwise",
+  },
+  {
     title: "Grade Tracker",
     descriptions:
       "A React Native application to track the student current progress and estimate the average grades to achieve a certain letter grade.",
