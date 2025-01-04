@@ -136,7 +136,7 @@ export default function Post({
               Problem Statement
             </div>
           </AccordionSummary>
-          <AccordionDetails className="border-l dark:border-l-slate-700 border-l-slate-200 ml-4">
+          <AccordionDetails className="border-l dark:border-l-[#1f1f1f] border-l-slate-200 ml-4">
             <article
               className="leetcode"
               dangerouslySetInnerHTML={{ __html: question.content }}

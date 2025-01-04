@@ -20,7 +20,7 @@ export default function IntroSection() {
   return (
     <section className="container flex flex-col gap-6 sm:p-6 p-4 rounded-lg h-full bg-white dark:bg-[#121212] sm:max-w-[35%] sm:min-w-[360px] flex-shrink-0 overflow-auto">
       <div className="flex flex-col gap-2">
-        <h1 className="text-5xl dark:text-white font-bold">Huy Tran</h1>
+        <h1 className="text-4xl dark:text-white font-bold">Huy Tran</h1>
         <p className="font-medium dark:text-gray-400 text-gray-600">
           Full Stack Engineer
         </p>

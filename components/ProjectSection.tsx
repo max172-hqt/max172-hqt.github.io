@@ -81,7 +81,7 @@ export default function ProjectSection() {
     <section className="container flex flex-col gap-6 sm:p-6 p-4 rounded-lg h-full bg-white dark:bg-[#121212] overflow-auto">
       <div className="flex md:justify-between md:items-center flex-col md:flex-row gap-4 justify-start items-start">
         <div className="flex flex-col gap-2">
-          <h2 className="text-5xl font-bold">Projects</h2>
+          <h2 className="text-4xl font-bold">Projects</h2>
           <p className="font-medium dark:text-gray-400 text-gray-600">
             Check out my recent projects
           </p>
