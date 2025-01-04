@@ -1,8 +1,11 @@
 import Image from "next/image";
 import profilePic from "public/Personal Avatar.jpeg";
 import classNames from "classnames";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const technologies = [
+  "Vue",
+  "OpenLayers",
   "React",
   "React Native",
   "iOS Development",
@@ -18,44 +21,48 @@ const technologies = [
 
 export default function IntroSection() {
   return (
-    <section className="container lg:max-w-3xl flex flex-col justify-center mx-auto lg:my-20 space-y-4 p-4">
-      <h1 className="text-5xl text-amber-600 font-semibold">Huy Tran</h1>
-      <div className="flex md:space-x-10 md:flex-row flex-col dark:text-slate-300">
-        <div className={classNames("flex-1 flex flex-col space-y-4")}>
-          <div>
-            I am a Software Engineer with experience in Web Development
-            and Test Automation. Previously, I was a Software Engineer at Got It
-            AI, an AI start-up based in Silicon Valley. Currently, I am a
-            student at Fanshawe College (London, ON), pursuing postgraduate
-            program in Mobile Application Development.
-          </div>
-          <div>
-            I completed my Bachelor’s degree in Computer Science at Worcester
-            Polytechnic Institute (Worcester, MA), where I worked on a{" "}
-            <a
-              href="https://www.wpi.edu/news/using-data-science-help-predict-adverse-drug-reactions"
-              target="_blank"
-              rel="noreferrer"
-              className={classNames(
-                "text-amber-600 rounded hover:text-amber-700 transition ease-in-out duration-300 font-medium"
-              )}
-            >
-              Visual Analytics System
-            </a>{" "}
-            to visualize adversary interactions of two or more drugs among 200+
-            drugs with Prof. Rundensteiner.
-          </div>
-          <div>Technologies that I have been working with are:</div>
-          <ul className="list-inside list-disc columns-2 font-mono text-gray-500 dark:text-slate-300 text-sm">
-            {technologies.map((text, index) => (
-              <li key={index}>{text}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="mt-4 flex justify-center items-start">
-          <Image src={profilePic} alt="Picture of Huy" className="w-60" />
-        </div>
+    <section className="container flex flex-col gap-6 p-6 rounded-lg h-full top-20 bg-[#121212] max-w-[35%] overflow-auto">
+      <div className="flex flex-col gap-2">
+        <h1 className="text-5xl text-white font-bold">Huy Tran</h1>
+        <p className="font-medium text-gray-400">Full Stack Engineer</p>
       </div>
+      <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
+        <h2 className="text-sm text-gray-400">About Me</h2>
+        <p>I&apos;m a highly motivated and detail-oriented developer. I love crafting seamless user experiences and intuitive interfaces, with testing in mind.</p>
+        <p>Most recently at LunaGeo, I built interactive WebGIS platforms, with latest Web and GIS technologies.</p>
+      </div>
+      <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
+        <h2 className="text-sm text-gray-400">Frontend</h2>
+        <ul className="text-sm flex gap-2 flex-wrap">
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">React</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">Vue</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">OpenLayers</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">TailwindCSS</li>
+        </ul>
+      </div>
+      <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
+        <h2 className="text-sm text-gray-400">Backend</h2>
+        <ul className="text-sm flex gap-2 flex-wrap">
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">SQL</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">Geoserver</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">Laravel</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">FastAPI</li>
+        </ul>
+      </div>
+      <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
+        <h2 className="text-sm text-gray-400">Testing</h2>
+        <ul className="text-sm flex gap-2 flex-wrap">
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">Cypress</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">Selenium</li>
+          <li className="border-gray-600 border rounded-full py-1.5 px-2.5">React Testing Library</li>
+        </ul>
+      </div>
+      {/* <div className="grid grid-cols-3 gap-2">
+        <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
+          <h2 className="text-sm text-gray-400">Location</h2>
+          <p>London, ON</p>
+        </div>
+      </div> */}
     </section>
   );
 }

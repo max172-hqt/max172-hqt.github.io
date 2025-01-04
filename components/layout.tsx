@@ -50,7 +50,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <PageNavbar />
-      <div className="xl:container xl:mx-auto">
+      <div className="xl:container xl:mx-auto px-4">
         {router.pathname.startsWith("/leetcodes") ? (
           <div className="flex md:flex-row flex-col gap-10">
             <LeetcodeSidebar />
@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         ) : (
           <>
             <main>{children}</main>
-            <PageFooter />
+            {/* <PageFooter /> */}
           </>
         )}
       </div>

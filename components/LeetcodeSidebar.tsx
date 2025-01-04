@@ -32,7 +32,7 @@ export default function LeetcodeSidebar() {
       <div
         className={classNames({
           "flex flex-col justify-between overflow-y-scroll": true, // layout
-          "bg-white dark:bg-slate-900": true, // colors
+          "bg-white dark:bg-black": true, // colors
           "lg:w-full lg:sticky lg:top-16 top-0 left-0 fixed": true, // positioning
           "lg:h-[calc(100vh_-_64px)] h-full w-[360px]": true, // for height and width
           "transition-transform .3s ease-in-out lg:translate-x-0": true, //animations
