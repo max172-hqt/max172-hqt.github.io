@@ -52,7 +52,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
       <PageNavbar />
       <div className="xl:container xl:mx-auto sm:px-4 p-2">
         {router.pathname.startsWith("/leetcodes") ? (
-          <div className="flex md:flex-row flex-col gap-10">
+          <div className="flex md:flex-row flex-col lg:gap-4">
             <LeetcodeSidebar />
             <main>{children}</main>
           </div>

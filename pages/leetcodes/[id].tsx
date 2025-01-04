@@ -100,7 +100,7 @@ export default function Post({
         <title>{`${title}`}</title>
       </Head>
 
-      <section className="flex flex-col my-2 md:my-10">
+      <section className="flex flex-col bg-white dark:bg-[#121212] py-4 md:py-8 md:px-4 rounded-lg my-1">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 md:text-left mx-3">
           {title}
         </h1>
@@ -122,7 +122,7 @@ export default function Post({
           disableGutters
           square
           expanded={problemExpanded}
-          className={classNames("dark:bg-slate-900", {
+          className={classNames("dark:bg-[#121212]", {
             "mb-6": problemExpanded,
           })}
         >
@@ -148,7 +148,7 @@ export default function Post({
           disableGutters
           square
           expanded={solutionExpanded}
-          className="dark:bg-slate-900"
+          className="dark:bg-[#121212]"
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon className="text-amber-600" />}

@@ -78,32 +78,34 @@ const projects = [
 
 export default function ProjectSection() {
   return (
-    <section className="container flex flex-col gap-6 p-4 sm:p-6 bg-[#121212] rounded-lg h-full top-20 overflow-auto">
+    <section className="container flex flex-col gap-6 sm:p-6 p-4 rounded-lg h-full bg-white dark:bg-[#121212] overflow-auto">
       <div className="flex md:justify-between md:items-center flex-col md:flex-row gap-4 justify-start items-start">
         <div className="flex flex-col gap-2">
           <h2 className="text-5xl font-bold">Projects</h2>
-          <p className="font-medium text-gray-400">Check out my recent projects</p>
+          <p className="font-medium dark:text-gray-400 text-gray-600">
+            Check out my recent projects
+          </p>
         </div>
-        <Link
+        <a
           href="https://github.com/max172-hqt"
-          className="bg-white hover:bg-white/80 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-black text-sm"
           target="_blank"
+          className="transition hover:underline ease-in-out duration-300 font-bold dark:text-white inline-flex items-center gap-2 text-sm"
           rel="noreferrer"
         >
           See More
-        </Link>
+        </a>
       </div>
 
       <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-4 text-sm">
         {projects.map((project) => (
           <div
-            className="relative flex flex-col bg-[#1f1f1f] p-4 overflow-hidden rounded-lg"
+            className="relative flex flex-col dark:bg-[#1f1f1f] dark:border-none border border-gray-300 p-4 overflow-hidden rounded-lg"
             key={project.title}
           >
             <div className="flex-grow flex flex-col gap-4">
               <Image
                 src={project.thumbnail}
-                alt="Picture of Huy"
+                alt={project.title}
                 className="w-full rounded-lg max-h-48"
                 style={{ objectFit: "contain", objectPosition: "center" }}
               />
