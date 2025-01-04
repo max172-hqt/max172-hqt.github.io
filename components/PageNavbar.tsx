@@ -11,7 +11,7 @@ import ThemeButton from "./ThemeButton";
 
 const navItems: Array<[string, string, boolean]> = [
   ["about", "/", false],
-  ["resume", "/resume", false],
+  // ["resume", "/resume", false],
   ["leetcode", "/leetcodes", false],
 ];
 

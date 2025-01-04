@@ -78,9 +78,12 @@ const projects = [
 
 export default function ProjectSection() {
   return (
-    <section className="container flex flex-col gap-6 space-y-4 p-4 sm:p-6 bg-[#121212] rounded-lg h-full top-20 overflow-auto">
+    <section className="container flex flex-col gap-6 p-4 sm:p-6 bg-[#121212] rounded-lg h-full top-20 overflow-auto">
       <div className="flex md:justify-between md:items-center flex-col md:flex-row gap-4 justify-start items-start">
-        <h2 className="text-5xl font-bold">Projects</h2>
+        <div className="flex flex-col gap-2">
+          <h2 className="text-5xl font-bold">Projects</h2>
+          <p className="font-medium text-gray-400">Check out my recent projects</p>
+        </div>
         <Link
           href="https://github.com/max172-hqt"
           className="bg-white hover:bg-white/80 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-black text-sm"
@@ -102,7 +105,7 @@ export default function ProjectSection() {
                 src={project.thumbnail}
                 alt="Picture of Huy"
                 className="w-full rounded-lg max-h-48"
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ objectFit: "contain", objectPosition: "center" }}
               />
               <h3 className="text-gray-900 dark:text-slate-200 font-bold text-base">
                 {project.title}

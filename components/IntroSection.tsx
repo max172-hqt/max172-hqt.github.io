@@ -1,7 +1,4 @@
-import Image from "next/image";
-import profilePic from "public/Personal Avatar.jpeg";
-import classNames from "classnames";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const technologies = [
   "Vue",
@@ -26,10 +23,21 @@ export default function IntroSection() {
         <h1 className="text-5xl text-white font-bold">Huy Tran</h1>
         <p className="font-medium text-gray-400">Full Stack Engineer</p>
       </div>
-      <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
+      <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-4">
         <h2 className="text-sm text-gray-400">About Me</h2>
-        <p>I&apos;m a highly motivated and detail-oriented developer. I love crafting seamless user experiences and intuitive interfaces, with testing in mind.</p>
         <p>Most recently at LunaGeo, I built interactive WebGIS platforms, with latest Web and GIS technologies.</p>
+        <p>I love crafting seamless user experiences and intuitive interfaces, with testing in mind.</p>
+        <a
+            href="/Huy_Tran___Resume.pdf"
+            target="_blank"
+            className="transition hover:underline ease-in-out duration-300 font-bold text-white inline-flex items-center gap-2 text-sm"
+            rel="noreferrer"
+            aria-label="View Resume PDF"
+          >
+            <DownloadIcon fontSize="medium" />
+            Download Resume
+          </a>
+
       </div>
       <div className="bg-[#1f1f1f] p-4 rounded-lg space-y-2">
         <h2 className="text-sm text-gray-400">Frontend</h2>
