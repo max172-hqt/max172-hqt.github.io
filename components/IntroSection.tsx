@@ -21,7 +21,7 @@ const technologies = [
 
 export default function IntroSection() {
   return (
-    <section className="container flex flex-col gap-6 p-6 rounded-lg h-full top-20 bg-[#121212] max-w-[35%] overflow-auto">
+    <section className="container flex flex-col gap-6 sm:p-6 p-4 rounded-lg h-full top-20 bg-[#121212] sm:max-w-[35%] sm:min-w-[360px] flex-shrink-0 overflow-auto">
       <div className="flex flex-col gap-2">
         <h1 className="text-5xl text-white font-bold">Huy Tran</h1>
         <p className="font-medium text-gray-400">Full Stack Engineer</p>

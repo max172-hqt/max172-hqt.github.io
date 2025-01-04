@@ -13,8 +13,8 @@ const projects = [
     descriptions:
       "An algorithm visualization application for Breadth-First Search and Depth-First Search.",
     technologies: ["React", "TailwindCSS"],
-    github: "https://github.com/max172-hqt/budgetwise-v2",
-    external: "https://github.com/max172-hqt/budgetwise-v2",
+    github: "https://github.com/max172-hqt/algorithms-visualizers",
+    external: "https://huytr.dev/algorithms-visualizers/",
     thumbnail: algorithmThumbnail,
   },
   {
@@ -22,8 +22,8 @@ const projects = [
     descriptions:
       "An application that tracks active earthquakes, with info about their impacts and magnitude.",
     technologies: ["React", "React-Query", "OpenLayers"],
-    github: "https://github.com/max172-hqt/budgetwise-v2",
-    external: "https://github.com/max172-hqt/budgetwise-v2",
+    github: "https://github.com/max172-hqt/earthquake-map",
+    external: "https://huytr.dev/earthquake-map/",
     thumbnail: earthquakeThumbnail,
   },
   {
@@ -78,16 +78,16 @@ const projects = [
 
 export default function ProjectSection() {
   return (
-    <section className="container flex flex-col gap-6 space-y-4 p-6 bg-[#121212] rounded-lg h-full top-20 overflow-auto">
-      <div className="flex justify-between items-center">
-        <h2 className="text-5xl font-bold">Recent Projects</h2>
+    <section className="container flex flex-col gap-6 space-y-4 p-4 sm:p-6 bg-[#121212] rounded-lg h-full top-20 overflow-auto">
+      <div className="flex md:justify-between md:items-center flex-col md:flex-row gap-4 justify-start items-start">
+        <h2 className="text-5xl font-bold">Projects</h2>
         <Link
           href="https://github.com/max172-hqt"
           className="bg-white hover:bg-white/80 transition ease-in-out duration-300 rounded  py-2 px-4 font-bold text-black text-sm"
           target="_blank"
           rel="noreferrer"
         >
-          See More Projects
+          See More
         </Link>
       </div>
 

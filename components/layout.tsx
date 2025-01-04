@@ -50,7 +50,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <PageNavbar />
-      <div className="xl:container xl:mx-auto px-4">
+      <div className="2xl:container 2xl:mx-auto sm:px-4 p-2">
         {router.pathname.startsWith("/leetcodes") ? (
           <div className="flex md:flex-row flex-col gap-10">
             <LeetcodeSidebar />
