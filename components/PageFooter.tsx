@@ -1,7 +1,7 @@
 export default function PageFooter() {
   return (
-    <footer className="bg-amber-800 text-center weight-medium text-sm py-1 sm:fixed sm:bottom-0 sm:left-0 sm:right-0 text-white font-medium">
-      <div>© Copyright 2023 Huy Tran. Developed with NextJS, TypeScript and TailwindCSS. Hosted by Github Pages.</div>
+    <footer className="text-center text-sm py-2 text-gray-300 border-t border-gray-800">
+      <div>© Copyright {new Date().getFullYear()} Huy Tran. Developed with NextJS, TypeScript and TailwindCSS. Hosted by Github Pages.</div>
     </footer>
   );
 }

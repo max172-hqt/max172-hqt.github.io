@@ -11,7 +11,7 @@ import ThemeButton from "./ThemeButton";
 
 const navItems: Array<[string, string, boolean]> = [
   ["about", "/", false],
-  ["resume", "/resume", false],
+  // ["resume", "/resume", false],
   ["leetcode", "/leetcodes", false],
 ];
 
@@ -30,7 +30,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="sticky top-0 z-10 dark:bg-slate-900 backdrop-blur bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75 transition-colors duration-500 lg:z-40 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06]">
+    <header className="sticky top-0 z-10 dark:bg-black backdrop-blur bg-white supports-backdrop-blur:bg-white/95 dark:bg-black/75 transition-colors duration-500 lg:z-40 lg:border-b lg:border-black/10 dark:border-black-50/[0.06]">
       <div className="xl:container xl:mx-auto sm:flex md:items-center md:px-4 md:py-3">
         <div className="flex items-center justify-between px-4 py-3 md:p-0 font-medium flex-grow">
           {router.pathname === "/" ? (
@@ -44,7 +44,7 @@ export default function NavBar() {
                   key={title}
                   href={url}
                   target="_blank"
-                  className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
+                  className="hover:underline transition ease-in-out duration-300 text-2xl"
                   rel="noreferrer"
                   aria-label={title}
                 >
@@ -55,7 +55,7 @@ export default function NavBar() {
           ) : (
             <Link
               href="/"
-              className="hover:text-amber-600 transition ease-in-out duration-300 text-2xl"
+              className="hover:underline hover:font-semibold transition ease-in-out duration-300 text-2xl"
             >
               HT
             </Link>
