@@ -28,13 +28,12 @@ export default function LeetcodeSidebar() {
   useOnClickOutside(ref, handleClickOutside);
 
   return (
-    <div className="z-50">
       <div
         className={classNames({
           "flex flex-col justify-between overflow-y-scroll rounded-lg": true, // layout
-          "bg-white dark:bg-[#121212]": true, // colors
-          "lg:w-full lg:sticky lg:top-[72px] top-0 left-0 fixed": true, // positioning
-          "lg:h-[calc(100vh_-_84px)] h-full w-[360px]": true, // for height and width
+          "bg-white dark:bg-[#121212] z-50": true, // colors
+          "lg:sticky lg:top-[72px] top-0 left-0 fixed": true, // positioning
+          "lg:h-[calc(100vh_-_84px)] h-full w-full lg:w-[500px]": true, // for height and width
           "transition-transform .3s ease-in-out lg:translate-x-0": true, //animations
           "-translate-x-full ": !sidenavOpen, //hide sidebar to the left when closed
         })}
@@ -78,6 +77,5 @@ export default function LeetcodeSidebar() {
           </ul>
         </nav>
       </div>
-    </div>
   );
 }
