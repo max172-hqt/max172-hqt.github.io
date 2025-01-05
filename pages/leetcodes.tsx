@@ -30,7 +30,7 @@ export default function Leetcodes({ posts }: { posts: Post[] }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
 
-      <section className="flex flex-col rounded-lg max-w-3xl bg-white p-4 sm:py-8 sm:px-4 dark:bg-[#1f1f1f]">
+      <section className="flex flex-col rounded-lg max-w-3xl bg-white p-4 sm:py-8 sm:px-4 dark:bg-[#121212]">
         <h1 className="text-3xl md:text-4xl lg:text-5xl mb-12 text-center md:text-left first-letter dark:text-slate-200 font-semibold">
           Welcome to my notes
         </h1>

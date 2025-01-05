@@ -160,7 +160,7 @@ export default function Post({
               Notes & Solution
             </div>
           </AccordionSummary>
-          <AccordionDetails className="border-l dark:border-l-slate-700 border-b-slate-200 ml-4">
+          <AccordionDetails className="border-l dark:border-l-[#1f1f1f] border-b-slate-200 ml-4">
             <article
               className="prose dark:prose-invert prose-slate text-black dark:text-slate-300"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
